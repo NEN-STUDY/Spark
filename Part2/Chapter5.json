@@ -1,0 +1,4965 @@
+{
+  "paragraphs": [
+    {
+      "text": "%md\n# 구조적 API 기본 연산",
+      "user": "anonymous",
+      "dateUpdated": "2022-03-29 14:03:17.314",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch1\u003e구조적 API 기본 연산\u003c/h1\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1648562543996_681325919",
+      "id": "20220329-140223_1048361861",
+      "dateCreated": "2022-03-29 14:02:23.996",
+      "dateStarted": "2022-03-29 14:03:17.315",
+      "dateFinished": "2022-03-29 14:03:17.323",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n- DataFrame의 구성\n    - Row 타입의 레코드\n    - 레코드에 수행할 연산 표현식을 나타내는 여러 컬럼\n- 스키마: 각 컬럼명과 데이터 타입을 정의\n- 파티셔닝: DataFrame이나 Dataset이 클러스터에서 물리적으로 배치되는 형태를 정의\n- 파티셔닝 스키마: 파티션을 배치하는 방법을 정의",
+      "user": "anonymous",
+      "dateUpdated": "2022-03-29 14:03:32.336",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cul\u003e\n  \u003cli\u003eDataFrame의 구성\n    \u003cul\u003e\n      \u003cli\u003eRow 타입의 레코드\u003c/li\u003e\n      \u003cli\u003e레코드에 수행할 연산 표현식을 나타내는 여러 컬럼\u003c/li\u003e\n    \u003c/ul\u003e\n  \u003c/li\u003e\n  \u003cli\u003e스키마: 각 컬럼명과 데이터 타입을 정의\u003c/li\u003e\n  \u003cli\u003e파티셔닝: DataFrame이나 Dataset이 클러스터에서 물리적으로 배치되는 형태를 정의\u003c/li\u003e\n  \u003cli\u003e파티셔닝 스키마: 파티션을 배치하는 방법을 정의\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1648562597307_1154075506",
+      "id": "20220329-140317_546465498",
+      "dateCreated": "2022-03-29 14:03:17.307",
+      "dateStarted": "2022-03-29 14:03:32.337",
+      "dateFinished": "2022-03-29 14:03:32.345",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val df \u003d spark.read.format(\"json\").load(\"/data/flight-data/json/2015-summary.json\")\ndf.printSchema()",
+      "user": "anonymous",
+      "dateUpdated": "2022-04-04 08:24:48.434",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "df: org.apache.spark.sql.DataFrame \u003d [DEST_COUNTRY_NAME: string, ORIGIN_COUNTRY_NAME: string ... 1 more field]\nroot\n |-- DEST_COUNTRY_NAME: string (nullable \u003d true)\n |-- ORIGIN_COUNTRY_NAME: string (nullable \u003d true)\n |-- count: long (nullable \u003d true)\n\n"
+          }
+        ]
+      },
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            "http://b3f9e8c0f3bd:4040/jobs/job?id\u003d91"
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "apps": [],
+      "jobName": "paragraph_1648562612320_-1157131312",
+      "id": "20220329-140332_410453586",
+      "dateCreated": "2022-03-29 14:03:32.320",
+      "dateStarted": "2022-04-04 08:24:48.504",
+      "dateFinished": "2022-04-04 08:24:49.008",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%spark.pyspark\n\ndf \u003d spark.read.format(\"json\").load(\"/data/flight-data/json/2015-summary.json\")\nprint(df)\ndf.printSchema()",
+      "user": "anonymous",
+      "dateUpdated": "2022-04-04 08:25:40.421",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/python"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "DataFrame[DEST_COUNTRY_NAME: string, ORIGIN_COUNTRY_NAME: string, count: bigint]\nroot\n |-- DEST_COUNTRY_NAME: string (nullable \u003d true)\n |-- ORIGIN_COUNTRY_NAME: string (nullable \u003d true)\n |-- count: long (nullable \u003d true)\n\n"
+          }
+        ]
+      },
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            "http://b3f9e8c0f3bd:4040/jobs/job?id\u003d92"
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "apps": [],
+      "jobName": "paragraph_1648562648055_-969051640",
+      "id": "20220329-140408_1605472606",
+      "dateCreated": "2022-03-29 14:04:08.055",
+      "dateStarted": "2022-04-04 08:25:40.493",
+      "dateFinished": "2022-04-04 08:25:40.561",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n## 스키마\n- **데이터소스에서 스키마를 얻거나 직접 정의 가능**\n- 데이터를 읽기 전에 스키마를 정의해야 하는지 여부는 상황에 따라 달라짐\n    - ETL 작업에 스파크를 사용한다면 직접 스키마를 정의해야함\n    - ETL 작업 중 데이터 타입을 알기 힘든 CSV나 JSON 등의 데이터소스를 사용하는 경우, 스키마 추론 과정에서 읽어 들인 샘플로 스키마를 결정해버릴 수 있음",
+      "user": "anonymous",
+      "dateUpdated": "2022-03-29 14:08:38.744",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch2\u003e스키마\u003c/h2\u003e\n\u003cul\u003e\n  \u003cli\u003e\u003cstrong\u003e데이터소스에서 스키마를 얻거나 직접 정의 가능\u003c/strong\u003e\u003c/li\u003e\n  \u003cli\u003e데이터를 읽기 전에 스키마를 정의해야 하는지 여부는 상황에 따라 달라짐\n    \u003cul\u003e\n      \u003cli\u003eETL 작업에 스파크를 사용한다면 직접 스키마를 정의해야함\u003c/li\u003e\n      \u003cli\u003eETL 작업 중 데이터 타입을 알기 힘든 CSV나 JSON 등의 데이터소스를 사용하는 경우, 스키마 추론 과정에서 읽어 들인 샘플로 스키마를 결정해버릴 수 있음\u003c/li\u003e\n    \u003c/ul\u003e\n  \u003c/li\u003e\n\u003c/ul\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1648562763888_-473739179",
+      "id": "20220329-140603_824366552",
+      "dateCreated": "2022-03-29 14:06:03.888",
+      "dateStarted": "2022-03-29 14:08:38.745",
+      "dateFinished": "2022-03-29 14:08:38.755",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "println(\n    spark.read.format(\"json\").load(\"/data/flight-data/json/2015-summary.json\").schema\n)",
+      "user": "anonymous",
+      "dateUpdated": "2022-04-04 08:27:28.000",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "StructType(StructField(DEST_COUNTRY_NAME,StringType,true), StructField(ORIGIN_COUNTRY_NAME,StringType,true), StructField(count,LongType,true))\n"
+          }
+        ]
+      },
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            "http://b3f9e8c0f3bd:4040/jobs/job?id\u003d93"
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "apps": [],
+      "jobName": "paragraph_1648562918736_1029658686",
+      "id": "20220329-140838_583982451",
+      "dateCreated": "2022-03-29 14:08:38.736",
+      "dateStarted": "2022-04-04 08:27:28.071",
+      "dateFinished": "2022-04-04 08:27:28.423",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%spark.pyspark\n\nspark.read.format(\"json\").load(\"/data/flight-data/json/2015-summary.json\").schema",
+      "user": "anonymous",
+      "dateUpdated": "2022-04-04 08:30:33.560",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/python"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "StructType(List(StructField(DEST_COUNTRY_NAME,StringType,true),StructField(ORIGIN_COUNTRY_NAME,StringType,true),StructField(count,LongType,true)))\n"
+          }
+        ]
+      },
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            "http://b3f9e8c0f3bd:4040/jobs/job?id\u003d95"
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "apps": [],
+      "jobName": "paragraph_1648563170582_-1816993479",
+      "id": "20220329-141250_532852955",
+      "dateCreated": "2022-03-29 14:12:50.582",
+      "dateStarted": "2022-04-04 08:30:33.629",
+      "dateFinished": "2022-04-04 08:30:33.699",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n- 스키마는 여러 개의 StructField 타입 필드로 구성된 StructType 객체임\n- StructField는 이름, 데이터 타입, 값이 null일 수 있는지 지정하는 boolean 값을 가짐",
+      "user": "anonymous",
+      "dateUpdated": "2022-03-29 14:15:41.380",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cul\u003e\n  \u003cli\u003e스키마는 여러 개의 StructField 타입 필드로 구성된 StructType 객체임\u003c/li\u003e\n  \u003cli\u003eStructField는 이름, 데이터 타입, 값이 null일 수 있는지 지정하는 boolean 값을 가짐\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1648563290333_-1452408936",
+      "id": "20220329-141450_1395781701",
+      "dateCreated": "2022-03-29 14:14:50.333",
+      "dateStarted": "2022-03-29 14:15:41.381",
+      "dateFinished": "2022-03-29 14:15:41.387",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "import org.apache.spark.sql.types.{StructField, StructType, StringType, LongType}\nimport org.apache.spark.sql.types.Metadata\n\nval myManualSchema \u003d StructType(Array(\n    StructField(\"DEST_COUNTRY_NAME\", StringType, true),\n    StructField(\"ORIGIN_COUNTRY_NAME\", StringType, true),\n    StructField(\"count\", LongType, false, Metadata.fromJson(\"{\\\"hello\\\":\\\"world\\\"}\"))\n))\n\nval df \u003d spark.read.format(\"json\").schema(myManualSchema).load(\"/data/flight-data/json/2015-summary.json\")",
+      "user": "anonymous",
+      "dateUpdated": "2022-04-04 08:33:08.135",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "import org.apache.spark.sql.types.{StructField, StructType, StringType, LongType}\nimport org.apache.spark.sql.types.Metadata\nmyManualSchema: org.apache.spark.sql.types.StructType \u003d StructType(StructField(DEST_COUNTRY_NAME,StringType,true), StructField(ORIGIN_COUNTRY_NAME,StringType,true), StructField(count,LongType,false))\ndf: org.apache.spark.sql.DataFrame \u003d [DEST_COUNTRY_NAME: string, ORIGIN_COUNTRY_NAME: string ... 1 more field]\nroot\n |-- DEST_COUNTRY_NAME: string (nullable \u003d true)\n |-- ORIGIN_COUNTRY_NAME: string (nullable \u003d true)\n |-- count: long (nullable \u003d true)\n\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1648563341369_328722220",
+      "id": "20220329-141541_1248334527",
+      "dateCreated": "2022-03-29 14:15:41.369",
+      "dateStarted": "2022-04-04 08:32:15.680",
+      "dateFinished": "2022-04-04 08:32:16.328",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%spark.pyspark\n\nfrom pyspark.sql.types import StructField, StructType, StringType, LongType\n\nmyManualSchema \u003d StructType([\n    StructField(\"DEST_COUNTRY_NAME\", StringType(), True),\n    StructField(\"ORIGIN_COUNTRY_NAME\", StringType(), True),\n    StructField(\"count\", LongType(), False, metadata\u003d{\"hello\":\"world\"})\n])\n\ndf \u003d spark.read.format(\"json\").schema(myManualSchema).load(\"/data/flight-data/json/2015-summary.json\")\n\nprint(df)",
+      "user": "anonymous",
+      "dateUpdated": "2022-04-04 08:33:55.532",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/python"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "DataFrame[DEST_COUNTRY_NAME: string, ORIGIN_COUNTRY_NAME: string, count: bigint]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1648563429816_1701919763",
+      "id": "20220329-141709_392408318",
+      "dateCreated": "2022-03-29 14:17:09.816",
+      "dateStarted": "2022-04-04 08:33:55.604",
+      "dateFinished": "2022-04-04 08:33:55.620",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n## 컬럼과 표현식\n- 스파크의 컬럼은 **표현식을 사용해 레코드 단위로 계산한 값을 단순하게 나타내는 논리적인 구조**\n    - 표현식으로 컬럼을 선택, 조작, 제거 가능\n- 따라서 컬럼의 실젯값을 얻으려면 로우가 필요하고,\n- 로우를 얻으려면 DataFrame이 필요하다.\n- DataFrame을 통하지 않으면 **외부에서 컬럼에 접근할 수 없다.**\n- 컬럼 내용을 **수정하려면 반드시 DataFrame의 스파크 트랜스포메이션**을 사용해야함",
+      "user": "anonymous",
+      "dateUpdated": "2022-04-04 08:34:36.361",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch2\u003e컬럼과 표현식\u003c/h2\u003e\n\u003cul\u003e\n  \u003cli\u003e스파크의 컬럼은 \u003cstrong\u003e표현식을 사용해 레코드 단위로 계산한 값을 단순하게 나타내는 논리적인 구조\u003c/strong\u003e\n    \u003cul\u003e\n      \u003cli\u003e표현식으로 컬럼을 선택, 조작, 제거 가능\u003c/li\u003e\n    \u003c/ul\u003e\n  \u003c/li\u003e\n  \u003cli\u003e따라서 컬럼의 실젯값을 얻으려면 로우가 필요하고,\u003c/li\u003e\n  \u003cli\u003e로우를 얻으려면 DataFrame이 필요하다.\u003c/li\u003e\n  \u003cli\u003eDataFrame을 통하지 않으면 \u003cstrong\u003e외부에서 컬럼에 접근할 수 없다.\u003c/strong\u003e\u003c/li\u003e\n  \u003cli\u003e컬럼 내용을 \u003cstrong\u003e수정하려면 반드시 DataFrame의 스파크 트랜스포메이션\u003c/strong\u003e을 사용해야함\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1648563527413_760132179",
+      "id": "20220329-141847_374531915",
+      "dateCreated": "2022-03-29 14:18:47.413",
+      "dateStarted": "2022-04-04 08:34:36.361",
+      "dateFinished": "2022-04-04 08:34:36.377",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n### 컬럼\n- col함수나 column함수를 사용하여 컬럼을 생성하고 참조",
+      "user": "anonymous",
+      "dateUpdated": "2022-03-29 14:26:15.905",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003e컬럼\u003c/h3\u003e\n\u003cul\u003e\n  \u003cli\u003ecol함수나 column함수를 사용하여 컬럼을 생성하고 참조\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1648563787193_602339958",
+      "id": "20220329-142307_801634961",
+      "dateCreated": "2022-03-29 14:23:07.193",
+      "dateStarted": "2022-03-29 14:26:15.906",
+      "dateFinished": "2022-03-29 14:26:15.911",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "import org.apache.spark.sql.functions.{col, column}\n\ncol(\"someColumnName\")\ncolumn(\"someColumnName\")",
+      "user": "anonymous",
+      "dateUpdated": "2022-04-04 08:36:00.771",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "import org.apache.spark.sql.functions.{col, column}\nres43: org.apache.spark.sql.Column \u003d someColumnName\nres44: org.apache.spark.sql.Column \u003d someColumnName\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1648563800609_-1234990207",
+      "id": "20220329-142320_713771221",
+      "dateCreated": "2022-03-29 14:23:20.609",
+      "dateStarted": "2022-04-04 08:36:00.836",
+      "dateFinished": "2022-04-04 08:36:01.184",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%spark.pyspark\n\nfrom pyspark.sql.functions import col, column\n\nprint(col(\"someColumnName\"))\nprint(column(\"someColumnName\"))",
+      "user": "anonymous",
+      "dateUpdated": "2022-04-04 08:37:11.386",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/python"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "Column\u003csomeColumnName\u003e\nColumn\u003csomeColumnName\u003e\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1648563840035_-1414946101",
+      "id": "20220329-142400_1703936081",
+      "dateCreated": "2022-03-29 14:24:00.035",
+      "dateStarted": "2022-04-04 08:37:11.460",
+      "dateFinished": "2022-04-04 08:37:11.479",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n- 컬럼이 DataFrame에 있을지 없을지는 알 수 없다.\n- 컬럼은 컬럼명을 카탈로그에 저장된 정보와 비교하기 전까지 *미확인* 상태\n- 4장에서 본 것 처럼, *분석기가 동작하는 단계에서 컬럼과 테이블을 분석함*",
+      "user": "anonymous",
+      "dateUpdated": "2022-03-29 14:25:48.077",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cul\u003e\n  \u003cli\u003e컬럼이 DataFrame에 있을지 없을지는 알 수 없다.\u003c/li\u003e\n  \u003cli\u003e컬럼은 컬럼명을 카탈로그에 저장된 정보와 비교하기 전까지 \u003cem\u003e미확인\u003c/em\u003e 상태\u003c/li\u003e\n  \u003cli\u003e4장에서 본 것 처럼, \u003cem\u003e분석기가 동작하는 단계에서 컬럼과 테이블을 분석함\u003c/em\u003e\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1648563915723_-2144581777",
+      "id": "20220329-142515_1469352792",
+      "dateCreated": "2022-03-29 14:25:15.723",
+      "dateStarted": "2022-03-29 14:25:48.076",
+      "dateFinished": "2022-03-29 14:25:48.085",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n#### 명시적 컬럼 참조\n- DataFrame의 컬럼은 **col 메서드**로 참조함\n- col메서드를 사용해 **명시적으로 컬럼을 정의**하면 스파크는 분석기 실행 단계에서 **컬럼 확인 절차를 생략함**",
+      "user": "anonymous",
+      "dateUpdated": "2022-04-04 08:37:51.732",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch4\u003e명시적 컬럼 참조\u003c/h4\u003e\n\u003cul\u003e\n  \u003cli\u003eDataFrame의 컬럼은 \u003cstrong\u003ecol 메서드\u003c/strong\u003e로 참조함\u003c/li\u003e\n  \u003cli\u003ecol메서드를 사용해 \u003cstrong\u003e명시적으로 컬럼을 정의\u003c/strong\u003e하면 스파크는 분석기 실행 단계에서 \u003cstrong\u003e컬럼 확인 절차를 생략함\u003c/strong\u003e\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1648563948054_1491857278",
+      "id": "20220329-142548_1154370171",
+      "dateCreated": "2022-03-29 14:25:48.054",
+      "dateStarted": "2022-04-04 08:37:51.733",
+      "dateFinished": "2022-04-04 08:37:51.741",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n### 표현식\n- 앞서 컬럼은 표현식이라고 했음 -\u003e 표현식이란?\n    - DataFrame 레코드의 **여러 값에 대한 트랜스포메이션 집합**\n    - **여러 컬럼명을 입력**으로 받아 식별하고, **\u0027단일 값\u0027**을 만들기 위해 **다양한 표현식**을 각 레코드에 적용하는 함수\n        - 여기서 단일 값은 Map이나 Array 같은 복합 데이터 타입일 수 있음\n    - **expr함수**로 간단히 표현식 사용 가능\n        - expr함수의 인수로 표현식을 사용하면 표현식을 분석해서 트랜스포메이션과 컬럼 참조를 알아낼 수 있음",
+      "user": "anonymous",
+      "dateUpdated": "2022-04-04 07:44:46.505",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003e표현식\u003c/h3\u003e\n\u003cul\u003e\n  \u003cli\u003e앞서 컬럼은 표현식이라고 했음 -\u0026gt; 표현식이란?\n    \u003cul\u003e\n      \u003cli\u003eDataFrame 레코드의 \u003cstrong\u003e여러 값에 대한 트랜스포메이션 집합\u003c/strong\u003e\u003c/li\u003e\n      \u003cli\u003e\u003cstrong\u003e여러 컬럼명을 입력\u003c/strong\u003e으로 받아 식별하고, \u003cstrong\u003e\u0026lsquo;단일 값\u0026rsquo;\u003c/strong\u003e을 만들기 위해 \u003cstrong\u003e다양한 표현식\u003c/strong\u003e을 각 레코드에 적용하는 함수\n        \u003cul\u003e\n          \u003cli\u003e여기서 단일 값은 Map이나 Array 같은 복합 데이터 타입일 수 있음\u003c/li\u003e\n        \u003c/ul\u003e\n      \u003c/li\u003e\n      \u003cli\u003e\u003cstrong\u003eexpr함수\u003c/strong\u003e로 간단히 표현식 사용 가능\n        \u003cul\u003e\n          \u003cli\u003eexpr함수의 인수로 표현식을 사용하면 표현식을 분석해서 트랜스포메이션과 컬럼 참조를 알아낼 수 있음\u003c/li\u003e\n        \u003c/ul\u003e\n      \u003c/li\u003e\n    \u003c/ul\u003e\n  \u003c/li\u003e\n\u003c/ul\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1648564012860_-1173039807",
+      "id": "20220329-142652_778894577",
+      "dateCreated": "2022-03-29 14:26:52.861",
+      "dateStarted": "2022-04-04 07:44:46.506",
+      "dateFinished": "2022-04-04 07:44:46.547",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "import org.apache.spark.sql.functions.expr\n\nexpr(\"(((someCol + 5) * 200) - 6) \u003c otherCol\")",
+      "user": "anonymous",
+      "dateUpdated": "2022-04-04 08:51:43.804",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 90.2656,
+              "optionOpen": false
+            }
+          }
+        },
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "import org.apache.spark.sql.functions.expr\nres59: org.apache.spark.sql.Column \u003d ((((someCol + 5) * 200) - 6) \u003c otherCol)\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1648564131018_-1756707897",
+      "id": "20220329-142851_1919610482",
+      "dateCreated": "2022-03-29 14:28:51.018",
+      "dateStarted": "2022-04-04 08:51:43.873",
+      "dateFinished": "2022-04-04 08:51:44.111",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%spark.pyspark\n\nfrom pyspark.sql.functions import expr\n\nexpr(\"(((someCol + 5) * 200) - 6) \u003c otherCol\")",
+      "user": "anonymous",
+      "dateUpdated": "2022-04-04 08:51:52.273",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/python"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "Column\u003c((((someCol + 5) * 200) - 6) \u003c otherCol)\u003e\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1648564199298_1618323868",
+      "id": "20220329-142959_1192666807",
+      "dateCreated": "2022-03-29 14:29:59.298",
+      "dateStarted": "2022-04-04 08:51:52.339",
+      "dateFinished": "2022-04-04 08:51:52.353",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n- 위 표현식은 **실행 시점에 아래와 같은 논리적 트리로 컴파일됨**\n![](app/images/5-1.png)\n- 어차피 **실행 시점에 논리 트리로 컴파일되므로 DataFrame코드나 SQL코드나 위와 같은 표현식**을 작성할 수 있고, **같은 성능**을 발휘함",
+      "user": "anonymous",
+      "dateUpdated": "2022-03-29 14:33:57.473",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cul\u003e\n  \u003cli\u003e위 표현식은 \u003cstrong\u003e실행 시점에 아래와 같은 논리적 트리로 컴파일됨\u003c/strong\u003e\u003cbr/\u003e\u003cimg src\u003d\"app/images/5-1.png\" /\u003e\u003c/li\u003e\n  \u003cli\u003e어차피 \u003cstrong\u003e실행 시점에 논리 트리로 컴파일되므로 DataFrame코드나 SQL코드나 위와 같은 표현식\u003c/strong\u003e을 작성할 수 있고, \u003cstrong\u003e같은 성능\u003c/strong\u003e을 발휘함\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1648564276484_677035348",
+      "id": "20220329-143116_1332939737",
+      "dateCreated": "2022-03-29 14:31:16.484",
+      "dateStarted": "2022-03-29 14:33:57.473",
+      "dateFinished": "2022-03-29 14:33:57.480",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n#### DataFrame 컬럼에 접근하기\n- printSchema메서드로 전체 컬럼 정보를 확인할 수 있지만 프로그래밍 방식으로 컬럼에 접근할 땐 df의 columns 속성을 사용",
+      "user": "anonymous",
+      "dateUpdated": "2022-04-04 08:53:16.793",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch4\u003eDataFrame 컬럼에 접근하기\u003c/h4\u003e\n\u003cul\u003e\n  \u003cli\u003eprintSchema메서드로 전체 컬럼 정보를 확인할 수 있지만 프로그래밍 방식으로 컬럼에 접근할 땐 df의 columns 속성을 사용\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1648564391812_1700157029",
+      "id": "20220329-143311_1441385546",
+      "dateCreated": "2022-03-29 14:33:11.812",
+      "dateStarted": "2022-04-04 08:53:16.793",
+      "dateFinished": "2022-04-04 08:53:16.800",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "spark.read.format(\"json\").load(\"/data/flight-data/json/2015-summary.json\").columns",
+      "user": "anonymous",
+      "dateUpdated": "2022-04-04 08:54:06.232",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "res67: Array[String] \u003d Array(DEST_COUNTRY_NAME, ORIGIN_COUNTRY_NAME, count)\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1648564461670_-1932951164",
+      "id": "20220329-143421_303106083",
+      "dateCreated": "2022-03-29 14:34:21.670",
+      "dateStarted": "2022-04-04 08:54:02.753",
+      "dateFinished": "2022-04-04 08:54:02.913",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%spark.pyspark\n\nspark.read.format(\"json\").load(\"/data/flight-data/json/2015-summary.json\").columns",
+      "user": "anonymous",
+      "dateUpdated": "2022-04-04 08:53:56.127",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/python"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "[\u0027DEST_COUNTRY_NAME\u0027, \u0027ORIGIN_COUNTRY_NAME\u0027, \u0027count\u0027]\n"
+          }
+        ]
+      },
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            "http://b3f9e8c0f3bd:4040/jobs/job?id\u003d102"
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "apps": [],
+      "jobName": "paragraph_1648564518840_-564368375",
+      "id": "20220329-143518_382219296",
+      "dateCreated": "2022-03-29 14:35:18.840",
+      "dateStarted": "2022-04-04 08:53:56.200",
+      "dateFinished": "2022-04-04 08:53:56.265",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n### 레코드와 로우\n- 스파크에서 DataFrame의 각 로우는 하나의 레코드\n- 스파크는 레코드를 Row 객체로 표현\n- Row 객체는 내부에 바이트 배열을 가짐\n- 바이트 배열 인터페이스는 오직 컬럼 표현식으로만 다룰 수 있으므로 사용자에게 절대 노출되지 않음",
+      "user": "anonymous",
+      "dateUpdated": "2022-03-29 14:36:33.816",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003e레코드와 로우\u003c/h3\u003e\n\u003cul\u003e\n  \u003cli\u003e스파크에서 DataFrame의 각 로우는 하나의 레코드\u003c/li\u003e\n  \u003cli\u003e스파크는 레코드를 Row 객체로 표현\u003c/li\u003e\n  \u003cli\u003eRow 객체는 내부에 바이트 배열을 가짐\u003c/li\u003e\n  \u003cli\u003e바이트 배열 인터페이스는 오직 컬럼 표현식으로만 다룰 수 있으므로 사용자에게 절대 노출되지 않음\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1648564562657_-1826170133",
+      "id": "20220329-143602_1193293394",
+      "dateCreated": "2022-03-29 14:36:02.657",
+      "dateStarted": "2022-03-29 14:36:33.816",
+      "dateFinished": "2022-03-29 14:36:33.823",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "spark.read.format(\"json\").load(\"/data/flight-data/json/2015-summary.json\").first()",
+      "user": "anonymous",
+      "dateUpdated": "2022-04-04 08:55:25.630",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "res77: org.apache.spark.sql.Row \u003d [United States,Romania,15]\n"
+          }
+        ]
+      },
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            "http://b3f9e8c0f3bd:4040/jobs/job?id\u003d108",
+            "http://b3f9e8c0f3bd:4040/jobs/job?id\u003d109"
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "apps": [],
+      "jobName": "paragraph_1648564589940_288273428",
+      "id": "20220329-143629_1196912025",
+      "dateCreated": "2022-03-29 14:36:29.940",
+      "dateStarted": "2022-04-04 08:55:25.699",
+      "dateFinished": "2022-04-04 08:55:25.957",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%spark.pyspark\n\nspark.read.format(\"json\").load(\"/data/flight-data/json/2015-summary.json\").first()",
+      "user": "anonymous",
+      "dateUpdated": "2022-04-04 08:55:36.499",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/python"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "Row(DEST_COUNTRY_NAME\u003du\u0027United States\u0027, ORIGIN_COUNTRY_NAME\u003du\u0027Romania\u0027, count\u003d15)\n"
+          }
+        ]
+      },
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            "http://b3f9e8c0f3bd:4040/jobs/job?id\u003d110",
+            "http://b3f9e8c0f3bd:4040/jobs/job?id\u003d111"
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "apps": [],
+      "jobName": "paragraph_1648564611791_-1553213197",
+      "id": "20220329-143651_207731188",
+      "dateCreated": "2022-03-29 14:36:51.791",
+      "dateStarted": "2022-04-04 08:55:36.566",
+      "dateFinished": "2022-04-04 08:55:36.662",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n#### 로우 생성하기\n- **Row 객체는 스키마 정보를 갖고 있지 않음**\n- DataFrame만 유일하게 스키마를 가짐\n- 따라서 Row객체를 직접 생성하려면 **DataFrame의 스키마와 같은 순서**로 값을 명시해야함",
+      "user": "anonymous",
+      "dateUpdated": "2022-03-29 14:39:06.402",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch4\u003e로우 생성하기\u003c/h4\u003e\n\u003cul\u003e\n  \u003cli\u003e\u003cstrong\u003eRow 객체는 스키마 정보를 갖고 있지 않음\u003c/strong\u003e\u003c/li\u003e\n  \u003cli\u003eDataFrame만 유일하게 스키마를 가짐\u003c/li\u003e\n  \u003cli\u003e따라서 Row객체를 직접 생성하려면 \u003cstrong\u003eDataFrame의 스키마와 같은 순서\u003c/strong\u003e로 값을 명시해야함\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1648564676751_633290194",
+      "id": "20220329-143756_1854922273",
+      "dateCreated": "2022-03-29 14:37:56.751",
+      "dateStarted": "2022-03-29 14:39:06.400",
+      "dateFinished": "2022-03-29 14:39:06.406",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "import org.apache.spark.sql.Row\n\nval myRow \u003d Row(\"Hello\", null, 1, false)\n\nmyRow(0)\nmyRow(0).asInstanceOf[String]\nmyRow.getString(0)\nmyRow.getInt(2)",
+      "user": "anonymous",
+      "dateUpdated": "2022-04-04 08:56:38.115",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "import org.apache.spark.sql.Row\nmyRow: org.apache.spark.sql.Row \u003d [Hello,null,1,false]\nres79: Any \u003d Hello\nres80: String \u003d Hello\nres81: String \u003d Hello\nres82: Int \u003d 1\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1648564746370_2141117405",
+      "id": "20220329-143906_1680762680",
+      "dateCreated": "2022-03-29 14:39:06.370",
+      "dateStarted": "2022-04-04 08:56:38.179",
+      "dateFinished": "2022-04-04 08:56:38.764",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%spark.pyspark\n\nfrom pyspark.sql import Row\n\nmyRow \u003d Row(\"Hello\", None, 1, False)\n\nprint(type(myRow[0]))\nprint(type(myRow[2]))",
+      "user": "anonymous",
+      "dateUpdated": "2022-04-04 08:57:15.880",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/python"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u003ctype \u0027str\u0027\u003e\n\u003ctype \u0027int\u0027\u003e\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1648564802196_-1766486907",
+      "id": "20220329-144002_244247505",
+      "dateCreated": "2022-03-29 14:40:02.196",
+      "dateStarted": "2022-04-04 08:57:15.950",
+      "dateFinished": "2022-04-04 08:57:15.959",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n## DataFrame의 트랜스포메이션",
+      "user": "anonymous",
+      "dateUpdated": "2022-03-29 14:45:14.053",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch2\u003eDataFrame의 트랜스포메이션\u003c/h2\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1648564896939_2053140387",
+      "id": "20220329-144136_651830223",
+      "dateCreated": "2022-03-29 14:41:36.939",
+      "dateStarted": "2022-03-29 14:45:14.054",
+      "dateFinished": "2022-03-29 14:45:14.058",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n### DataFrame 생성하기",
+      "user": "anonymous",
+      "dateUpdated": "2022-03-29 14:45:27.648",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003eDataFrame 생성하기\u003c/h3\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1648565114031_-1712595918",
+      "id": "20220329-144514_2087953410",
+      "dateCreated": "2022-03-29 14:45:14.031",
+      "dateStarted": "2022-03-29 14:45:27.648",
+      "dateFinished": "2022-03-29 14:45:27.654",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "\nimport org.apache.spark.sql.Row\nimport org.apache.spark.sql.types.{StructField, StructType, StringType, LongType}\n\nval df \u003d spark.read.format(\"json\").load(\"/data/flight-data/json/2015-summary.json\")\ndf.createOrReplaceTempView(\"dfTable\")\n\nval myManualSchema \u003d new StructType(Array(\n    new StructField(\"some\", StringType, true),\n    new StructField(\"col\", StringType, true),\n    new StructField(\"names\", LongType, false)\n))\n\nval myRows \u003d Seq(Row(\"Hello\", null, 1L), Row(\"Hello\", null, 1L), Row(\"Hello\", null, 1L))\nval myRDD \u003d spark.sparkContext.parallelize(myRows)\nval myDf \u003d spark.createDataFrame(myRDD, myManualSchema)\n\nmyDf.show()\nmyDf.printSchema()\n\nval myDf \u003d Seq((\"Hello\", 2, 1L)).toDF(\"col1\", \"col2\", \"col3\")\n\nmyDf.show()\nmyDf.printSchema()",
+      "user": "anonymous",
+      "dateUpdated": "2022-04-04 08:59:39.464",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "import org.apache.spark.sql.Row\nimport org.apache.spark.sql.types.{StructField, StructType, StringType, LongType}\ndf: org.apache.spark.sql.DataFrame \u003d [DEST_COUNTRY_NAME: string, ORIGIN_COUNTRY_NAME: string ... 1 more field]\nmyManualSchema: org.apache.spark.sql.types.StructType \u003d StructType(StructField(some,StringType,true), StructField(col,StringType,true), StructField(names,LongType,false))\nmyRows: Seq[org.apache.spark.sql.Row] \u003d List([Hello,null,1], [Hello,null,1], [Hello,null,1])\nmyRDD: org.apache.spark.rdd.RDD[org.apache.spark.sql.Row] \u003d ParallelCollectionRDD[508] at parallelize at \u003cconsole\u003e:60\nmyDf: org.apache.spark.sql.DataFrame \u003d [some: string, col: string ... 1 more field]\n+-----+----+-----+\n| some| col|names|\n+-----+----+-----+\n|Hello|null|    1|\n|Hello|null|    1|\n|Hello|null|    1|\n+-----+----+-----+\n\nroot\n |-- some: string (nullable \u003d true)\n |-- col: string (nullable \u003d true)\n |-- names: long (nullable \u003d false)\n\nmyDf: org.apache.spark.sql.DataFrame \u003d [col1: string, col2: int ... 1 more field]\n+-----+----+----+\n| col1|col2|col3|\n+-----+----+----+\n|Hello|   2|   1|\n+-----+----+----+\n\nroot\n |-- col1: string (nullable \u003d true)\n |-- col2: integer (nullable \u003d false)\n |-- col3: long (nullable \u003d false)\n\n"
+          }
+        ]
+      },
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            "http://b3f9e8c0f3bd:4040/jobs/job?id\u003d119",
+            "http://b3f9e8c0f3bd:4040/jobs/job?id\u003d120",
+            "http://b3f9e8c0f3bd:4040/jobs/job?id\u003d121",
+            "http://b3f9e8c0f3bd:4040/jobs/job?id\u003d122"
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "apps": [],
+      "jobName": "paragraph_1648565388330_1267621268",
+      "id": "20220329-144948_1345185",
+      "dateCreated": "2022-03-29 14:49:48.330",
+      "dateStarted": "2022-04-04 08:59:39.532",
+      "dateFinished": "2022-04-04 08:59:41.570",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%spark.pyspark\n\nfrom pyspark.sql import Row\nfrom pyspark.sql.types import StructField, StructType, StringType, LongType\n\ndf \u003d spark.read.format(\"json\").load(\"/data/flight-data/json/2015-summary.json\")\ndf.createOrReplaceTempView(\"dfTable\")\n\nmyManualSchema \u003d StructType([\n    StructField(\"some\", StringType(), True),\n    StructField(\"col\", StringType(), True),\n    StructField(\"names\", LongType(), True)\n])\n\nmyRow \u003d Row(\"Hello\", None, 1)\nmyDf \u003d spark.createDataFrame([myRow], myManualSchema)\nmyDf.show()\nmyDf.printSchema()",
+      "user": "anonymous",
+      "dateUpdated": "2022-04-04 09:00:46.487",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/python"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+-----+----+-----+\n| some| col|names|\n+-----+----+-----+\n|Hello|null|    1|\n+-----+----+-----+\n\nroot\n |-- some: string (nullable \u003d true)\n |-- col: string (nullable \u003d true)\n |-- names: long (nullable \u003d true)\n\n"
+          }
+        ]
+      },
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            "http://b3f9e8c0f3bd:4040/jobs/job?id\u003d127",
+            "http://b3f9e8c0f3bd:4040/jobs/job?id\u003d128",
+            "http://b3f9e8c0f3bd:4040/jobs/job?id\u003d129",
+            "http://b3f9e8c0f3bd:4040/jobs/job?id\u003d130"
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "apps": [],
+      "jobName": "paragraph_1648565127615_-1094205595",
+      "id": "20220329-144527_1305354545",
+      "dateCreated": "2022-03-29 14:45:27.615",
+      "dateStarted": "2022-04-04 09:00:46.556",
+      "dateFinished": "2022-04-04 09:00:46.852",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n### select와 selectExpr\n- select와 selectExpr메서드를 사용하면 데이터 테이블에 SQL을 실행하는 것 처럼 DataFrame에서도 SQL 사용 가능",
+      "user": "anonymous",
+      "dateUpdated": "2022-03-29 16:14:40.978",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003eselect와 selectExpr\u003c/h3\u003e\n\u003cul\u003e\n  \u003cli\u003eselect와 selectExpr메서드를 사용하면 데이터 테이블에 SQL을 실행하는 것 처럼 DataFrame에서도 SQL 사용 가능\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1648565229946_1522795518",
+      "id": "20220329-144709_1837945327",
+      "dateCreated": "2022-03-29 14:47:09.947",
+      "dateStarted": "2022-03-29 16:14:40.979",
+      "dateFinished": "2022-03-29 16:14:40.985",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "df.select(\"DEST_COUNTRY_NAME\").show(2)",
+      "user": "anonymous",
+      "dateUpdated": "2022-04-04 09:01:24.331",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+-----------------+\n|DEST_COUNTRY_NAME|\n+-----------------+\n|    United States|\n|    United States|\n+-----------------+\nonly showing top 2 rows\n\n"
+          }
+        ]
+      },
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            "http://b3f9e8c0f3bd:4040/jobs/job?id\u003d132"
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "apps": [],
+      "jobName": "paragraph_1648566060034_284695402",
+      "id": "20220329-150100_574395593",
+      "dateCreated": "2022-03-29 15:01:00.034",
+      "dateStarted": "2022-04-04 09:01:24.404",
+      "dateFinished": "2022-04-04 09:01:24.634",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%spark.pyspark\n\ndf.select(\"DEST_COUNTRY_NAME\").show(2)",
+      "user": "anonymous",
+      "dateUpdated": "2022-04-04 09:03:52.690",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/python"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+-----------------+\n|DEST_COUNTRY_NAME|\n+-----------------+\n|    United States|\n|    United States|\n+-----------------+\nonly showing top 2 rows\n\n"
+          }
+        ]
+      },
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            "http://b3f9e8c0f3bd:4040/jobs/job?id\u003d141"
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "apps": [],
+      "jobName": "paragraph_1648566083236_-441162707",
+      "id": "20220329-150123_157165957",
+      "dateCreated": "2022-03-29 15:01:23.236",
+      "dateStarted": "2022-04-04 09:03:52.761",
+      "dateFinished": "2022-04-04 09:03:52.822",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%sql\nSELECT DEST_COUNTRY_NAME FROM dfTable LIMIT 2",
+      "user": "anonymous",
+      "dateUpdated": "2022-04-04 09:01:37.235",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 300.0,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "DEST_COUNTRY_NAME": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                }
+              },
+              "commonSetting": {}
+            }
+          }
+        },
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/sql"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "DEST_COUNTRY_NAME\nUnited States\nUnited States\n"
+          }
+        ]
+      },
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            "http://b3f9e8c0f3bd:4040/jobs/job?id\u003d133"
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "apps": [],
+      "jobName": "paragraph_1648565936819_-1102763227",
+      "id": "20220329-145856_1815191823",
+      "dateCreated": "2022-03-29 14:58:56.819",
+      "dateStarted": "2022-04-04 09:01:37.304",
+      "dateFinished": "2022-04-04 09:01:37.430",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "import org.apache.spark.sql.functions.{expr, col, column}\n\ndf.select(\n    df.col(\"DEST_COUNTRY_NAME\"),\n    col(\"DEST_COUNTRY_NAME\"),\n    column(\"DEST_COUNTRY_NAME\"),\n    \u0027DEST_COUNTRY_NAME,\n    $\"DEST_COUNTRY_NAME\",\n    expr(\"DEST_COUNTRY_NAME\")\n).show(2)",
+      "user": "anonymous",
+      "dateUpdated": "2022-04-04 09:02:30.676",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "import org.apache.spark.sql.functions.{expr, col, column}\n+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+\n|DEST_COUNTRY_NAME|DEST_COUNTRY_NAME|DEST_COUNTRY_NAME|DEST_COUNTRY_NAME|DEST_COUNTRY_NAME|DEST_COUNTRY_NAME|\n+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+\n|    United States|    United States|    United States|    United States|    United States|    United States|\n|    United States|    United States|    United States|    United States|    United States|    United States|\n+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+\nonly showing top 2 rows\n\n"
+          }
+        ]
+      },
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            "http://b3f9e8c0f3bd:4040/jobs/job?id\u003d134"
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "apps": [],
+      "jobName": "paragraph_1648565991174_-692942071",
+      "id": "20220329-145951_202096330",
+      "dateCreated": "2022-03-29 14:59:51.174",
+      "dateStarted": "2022-04-04 09:02:30.742",
+      "dateFinished": "2022-04-04 09:02:31.178",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%spark.pyspark\n\nfrom pyspark.sql.functions import expr, col, column\n\ndf.select(\n    expr(\"DEST_COUNTRY_NAME\"),\n    col(\"DEST_COUNTRY_NAME\"),\n    column(\"DEST_COUNTRY_NAME\")\n).show(2)",
+      "user": "anonymous",
+      "dateUpdated": "2022-04-04 09:02:43.403",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/python"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+-----------------+-----------------+-----------------+\n|DEST_COUNTRY_NAME|DEST_COUNTRY_NAME|DEST_COUNTRY_NAME|\n+-----------------+-----------------+-----------------+\n|    United States|    United States|    United States|\n|    United States|    United States|    United States|\n+-----------------+-----------------+-----------------+\nonly showing top 2 rows\n\n"
+          }
+        ]
+      },
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            "http://b3f9e8c0f3bd:4040/jobs/job?id\u003d136"
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "apps": [],
+      "jobName": "paragraph_1648570347711_-1967688983",
+      "id": "20220329-161227_899026833",
+      "dateCreated": "2022-03-29 16:12:27.711",
+      "dateStarted": "2022-04-04 09:02:43.470",
+      "dateFinished": "2022-04-04 09:02:43.572",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n- 위처럼 select 메서드에 expr함수를 사용하는 패턴을 자주 사용함\n-\u003e 이를 간단하고 효율적으로 할 수 있는 메서드가 selectExpr",
+      "user": "anonymous",
+      "dateUpdated": "2022-03-29 16:14:27.920",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cul\u003e\n  \u003cli\u003e위처럼 select 메서드에 expr함수를 사용하는 패턴을 자주 사용함\u003cbr/\u003e-\u0026gt; 이를 간단하고 효율적으로 할 수 있는 메서드가 selectExpr\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1648570394177_-203002582",
+      "id": "20220329-161314_1693872776",
+      "dateCreated": "2022-03-29 16:13:14.177",
+      "dateStarted": "2022-03-29 16:14:27.920",
+      "dateFinished": "2022-03-29 16:14:27.927",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n#### selectExpr\n- 새로운 DataFrame을 생성하는 복잡한 표현식을 간단하게 만드는 도구",
+      "user": "anonymous",
+      "dateUpdated": "2022-03-29 16:15:18.351",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch4\u003eselectExpr\u003c/h4\u003e\n\u003cul\u003e\n  \u003cli\u003e새로운 DataFrame을 생성하는 복잡한 표현식을 간단하게 만드는 도구\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1648570467887_-51808671",
+      "id": "20220329-161427_207594503",
+      "dateCreated": "2022-03-29 16:14:27.887",
+      "dateStarted": "2022-03-29 16:15:18.352",
+      "dateFinished": "2022-03-29 16:15:18.357",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "df.select(expr(\"DEST_COUNTRY_NAME AS destination\").alias(\"DEST_COUNTRY_NAME\")).show(2)",
+      "user": "anonymous",
+      "dateUpdated": "2022-04-04 09:04:09.842",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+-----------------+\n|DEST_COUNTRY_NAME|\n+-----------------+\n|    United States|\n|    United States|\n+-----------------+\nonly showing top 2 rows\n\n"
+          }
+        ]
+      },
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            "http://b3f9e8c0f3bd:4040/jobs/job?id\u003d142"
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "apps": [],
+      "jobName": "paragraph_1648570518319_-827002521",
+      "id": "20220329-161518_504508949",
+      "dateCreated": "2022-03-29 16:15:18.319",
+      "dateStarted": "2022-04-04 09:04:09.913",
+      "dateFinished": "2022-04-04 09:04:10.171",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%spark.pyspark\n\ndf.select(expr(\"DEST_COUNTRY_NAME AS destination\").alias(\"DEST_COUNTRY_NAME\")).show(2)",
+      "user": "anonymous",
+      "dateUpdated": "2022-04-04 09:04:21.512",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/python"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+-----------------+\n|DEST_COUNTRY_NAME|\n+-----------------+\n|    United States|\n|    United States|\n+-----------------+\nonly showing top 2 rows\n\n"
+          }
+        ]
+      },
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            "http://b3f9e8c0f3bd:4040/jobs/job?id\u003d143"
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "apps": [],
+      "jobName": "paragraph_1648570538636_1434051308",
+      "id": "20220329-161538_1790963826",
+      "dateCreated": "2022-03-29 16:15:38.636",
+      "dateStarted": "2022-04-04 09:04:21.582",
+      "dateFinished": "2022-04-04 09:04:21.641",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "df.selectExpr(\n    \"*\",\n    \"(DEST_COUNTRY_NAME \u003d ORIGIN_COUNTRY_NAME) as withinCountry\"\n).show(2)",
+      "user": "anonymous",
+      "dateUpdated": "2022-04-04 09:07:58.956",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+-----------------+-------------------+-----+-------------+\n|DEST_COUNTRY_NAME|ORIGIN_COUNTRY_NAME|count|withinCountry|\n+-----------------+-------------------+-----+-------------+\n|    United States|            Romania|   15|        false|\n|    United States|            Croatia|    1|        false|\n+-----------------+-------------------+-----+-------------+\nonly showing top 2 rows\n\n"
+          }
+        ]
+      },
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            "http://b3f9e8c0f3bd:4040/jobs/job?id\u003d153"
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "apps": [],
+      "jobName": "paragraph_1648570549789_-555263852",
+      "id": "20220329-161549_1470218293",
+      "dateCreated": "2022-03-29 16:15:49.789",
+      "dateStarted": "2022-04-04 09:07:59.021",
+      "dateFinished": "2022-04-04 09:07:59.251",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%spark.pyspark\n\ndf.selectExpr(\n    \"*\",\n    \"(DEST_COUNTRY_NAME \u003d ORIGIN_COUNTRY_NAME) as withinCountry\"\n).show(2)",
+      "user": "anonymous",
+      "dateUpdated": "2022-04-04 09:08:32.868",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/python"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+-----------------+-------------------+-----+-------------+\n|DEST_COUNTRY_NAME|ORIGIN_COUNTRY_NAME|count|withinCountry|\n+-----------------+-------------------+-----+-------------+\n|    United States|            Romania|   15|        false|\n|    United States|            Croatia|    1|        false|\n+-----------------+-------------------+-----+-------------+\nonly showing top 2 rows\n\n"
+          }
+        ]
+      },
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            "http://b3f9e8c0f3bd:4040/jobs/job?id\u003d157"
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "apps": [],
+      "jobName": "paragraph_1648570650103_301062994",
+      "id": "20220329-161730_1635327475",
+      "dateCreated": "2022-03-29 16:17:30.103",
+      "dateStarted": "2022-04-04 09:08:32.943",
+      "dateFinished": "2022-04-04 09:08:33.015",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%sql\n\nSELECT *, (DEST_COUNTRY_NAME \u003d ORIGIN_COUNTRY_NAME) as withinCountry\nFROM dfTable\nLIMIT 2",
+      "user": "anonymous",
+      "dateUpdated": "2022-04-04 09:09:08.569",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 300.0,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "DEST_COUNTRY_NAME": "string",
+                      "ORIGIN_COUNTRY_NAME": "string",
+                      "count": "string",
+                      "withinCountry": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                }
+              },
+              "commonSetting": {}
+            }
+          }
+        },
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/sql"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "DEST_COUNTRY_NAME\tORIGIN_COUNTRY_NAME\tcount\twithinCountry\nUnited States\tRomania\t15\tfalse\nUnited States\tCroatia\t1\tfalse\n"
+          }
+        ]
+      },
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            "http://b3f9e8c0f3bd:4040/jobs/job?id\u003d159"
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "apps": [],
+      "jobName": "paragraph_1648570699165_-1638469019",
+      "id": "20220329-161819_2084451678",
+      "dateCreated": "2022-03-29 16:18:19.165",
+      "dateStarted": "2022-04-04 09:09:08.636",
+      "dateFinished": "2022-04-04 09:09:08.684",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "df.selectExpr(\"avg(count)\", \"count(distinct(DEST_COUNTRY_NAME))\").show(2)",
+      "user": "anonymous",
+      "dateUpdated": "2022-04-04 09:09:24.091",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+-----------+---------------------------------+\n| avg(count)|count(DISTINCT DEST_COUNTRY_NAME)|\n+-----------+---------------------------------+\n|1770.765625|                              132|\n+-----------+---------------------------------+\n\n"
+          }
+        ]
+      },
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            "http://b3f9e8c0f3bd:4040/jobs/job?id\u003d160"
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "apps": [],
+      "jobName": "paragraph_1648570715420_-91609171",
+      "id": "20220329-161835_1464053615",
+      "dateCreated": "2022-03-29 16:18:35.420",
+      "dateStarted": "2022-04-04 09:09:24.163",
+      "dateFinished": "2022-04-04 09:09:25.718",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%spark.pyspark\n\ndf.selectExpr(\"avg(count)\", \"count(distinct(DEST_COUNTRY_NAME))\").show(2)",
+      "user": "anonymous",
+      "dateUpdated": "2022-04-04 09:09:31.667",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/python"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+-----------+---------------------------------+\n| avg(count)|count(DISTINCT DEST_COUNTRY_NAME)|\n+-----------+---------------------------------+\n|1770.765625|                              132|\n+-----------+---------------------------------+\n\n"
+          }
+        ]
+      },
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            "http://b3f9e8c0f3bd:4040/jobs/job?id\u003d161"
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "apps": [],
+      "jobName": "paragraph_1648570775907_51314282",
+      "id": "20220329-161935_72182510",
+      "dateCreated": "2022-03-29 16:19:35.907",
+      "dateStarted": "2022-04-04 09:09:31.735",
+      "dateFinished": "2022-04-04 09:09:32.431",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%sql\n\nSELECT avg(count), count(distinct(DEST_COUNTRY_NAME)) FROM dfTable LIMIT 2",
+      "user": "anonymous",
+      "dateUpdated": "2022-04-04 09:09:40.588",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 300.0,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "avg(count)": "string",
+                      "count(DISTINCT DEST_COUNTRY_NAME)": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                }
+              },
+              "commonSetting": {}
+            }
+          }
+        },
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/sql"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "avg(count)\tcount(DISTINCT DEST_COUNTRY_NAME)\n1770.765625\t132\n"
+          }
+        ]
+      },
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            "http://b3f9e8c0f3bd:4040/jobs/job?id\u003d162"
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "apps": [],
+      "jobName": "paragraph_1648570791578_872720624",
+      "id": "20220329-161951_1961491713",
+      "dateCreated": "2022-03-29 16:19:51.579",
+      "dateStarted": "2022-04-04 09:09:40.657",
+      "dateFinished": "2022-04-04 09:09:41.300",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n### 리터럴(literal)\n- 때로는 **새로운 컬럼이 아닌 명시적인 값(상숫값)**을 스파크에 전달해야함\n    - 생성된 변숫값이 특정 컬럼의 값보다 큰지 확인할 때\n- literal은 프로그래밍 언어의 리터럴값을 스파크가 이해할 수 있는 값으로 변환함",
+      "user": "anonymous",
+      "dateUpdated": "2022-04-04 07:59:10.981",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003e리터럴(literal)\u003c/h3\u003e\n\u003cul\u003e\n  \u003cli\u003e때로는 \u003cstrong\u003e새로운 컬럼이 아닌 명시적인 값(상숫값)\u003c/strong\u003e을 스파크에 전달해야함\n    \u003cul\u003e\n      \u003cli\u003e생성된 변숫값이 특정 컬럼의 값보다 큰지 확인할 때\u003c/li\u003e\n    \u003c/ul\u003e\n  \u003c/li\u003e\n  \u003cli\u003eliteral은 프로그래밍 언어의 리터럴값을 스파크가 이해할 수 있는 값으로 변환함\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1648570800976_1000350597",
+      "id": "20220329-162000_467914077",
+      "dateCreated": "2022-03-29 16:20:00.976",
+      "dateStarted": "2022-04-04 07:59:10.983",
+      "dateFinished": "2022-04-04 07:59:10.991",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "import org.apache.spark.sql.functions.lit\n\ndf.select(expr(\"*\"), lit(1).as(\"One\")).show(2)\n\ndf.selectExpr(\"*\", \"1 AS One\").show(2)",
+      "user": "anonymous",
+      "dateUpdated": "2022-04-04 09:10:38.939",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "import org.apache.spark.sql.functions.lit\n+-----------------+-------------------+-----+---+\n|DEST_COUNTRY_NAME|ORIGIN_COUNTRY_NAME|count|One|\n+-----------------+-------------------+-----+---+\n|    United States|            Romania|   15|  1|\n|    United States|            Croatia|    1|  1|\n+-----------------+-------------------+-----+---+\nonly showing top 2 rows\n\n+-----------------+-------------------+-----+---+\n|DEST_COUNTRY_NAME|ORIGIN_COUNTRY_NAME|count|One|\n+-----------------+-------------------+-----+---+\n|    United States|            Romania|   15|  1|\n|    United States|            Croatia|    1|  1|\n+-----------------+-------------------+-----+---+\nonly showing top 2 rows\n\n"
+          }
+        ]
+      },
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            "http://b3f9e8c0f3bd:4040/jobs/job?id\u003d165",
+            "http://b3f9e8c0f3bd:4040/jobs/job?id\u003d166"
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "apps": [],
+      "jobName": "paragraph_1648570887113_-861656656",
+      "id": "20220329-162127_1967643350",
+      "dateCreated": "2022-03-29 16:21:27.113",
+      "dateStarted": "2022-04-04 09:10:39.007",
+      "dateFinished": "2022-04-04 09:10:39.476",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%spark.pyspark\n\nfrom pyspark.sql.functions import lit\n\ndf.select(expr(\"*\"), lit(1).alias(\"One\")).show(2)\n\ndf.selectExpr(\"*\", \"1 AS One\").show(2)",
+      "user": "anonymous",
+      "dateUpdated": "2022-04-04 09:10:43.974",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/python"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+-----------------+-------------------+-----+---+\n|DEST_COUNTRY_NAME|ORIGIN_COUNTRY_NAME|count|One|\n+-----------------+-------------------+-----+---+\n|    United States|            Romania|   15|  1|\n|    United States|            Croatia|    1|  1|\n+-----------------+-------------------+-----+---+\nonly showing top 2 rows\n\n+-----------------+-------------------+-----+---+\n|DEST_COUNTRY_NAME|ORIGIN_COUNTRY_NAME|count|One|\n+-----------------+-------------------+-----+---+\n|    United States|            Romania|   15|  1|\n|    United States|            Croatia|    1|  1|\n+-----------------+-------------------+-----+---+\nonly showing top 2 rows\n\n"
+          }
+        ]
+      },
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            "http://b3f9e8c0f3bd:4040/jobs/job?id\u003d167",
+            "http://b3f9e8c0f3bd:4040/jobs/job?id\u003d168"
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "apps": [],
+      "jobName": "paragraph_1648571168778_-544600966",
+      "id": "20220329-162608_48343019",
+      "dateCreated": "2022-03-29 16:26:08.778",
+      "dateStarted": "2022-04-04 09:10:44.046",
+      "dateFinished": "2022-04-04 09:10:44.163",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%sql\n\nSELECT *, 1 as One FROM dfTable LIMIT 2",
+      "user": "anonymous",
+      "dateUpdated": "2022-04-04 09:10:49.560",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 300.0,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "DEST_COUNTRY_NAME": "string",
+                      "ORIGIN_COUNTRY_NAME": "string",
+                      "count": "string",
+                      "One": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                }
+              },
+              "commonSetting": {}
+            }
+          }
+        },
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/sql"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "DEST_COUNTRY_NAME\tORIGIN_COUNTRY_NAME\tcount\tOne\nUnited States\tRomania\t15\t1\nUnited States\tCroatia\t1\t1\n"
+          }
+        ]
+      },
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            "http://b3f9e8c0f3bd:4040/jobs/job?id\u003d169"
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "apps": [],
+      "jobName": "paragraph_1648571174023_776913336",
+      "id": "20220329-162614_52436476",
+      "dateCreated": "2022-03-29 16:26:14.023",
+      "dateStarted": "2022-04-04 09:10:49.630",
+      "dateFinished": "2022-04-04 09:10:49.699",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n### withColumn\n- DataFrame에 신규 컬럼을 추가",
+      "user": "anonymous",
+      "dateUpdated": "2022-04-02 15:56:28.434",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003ewithColumn\u003c/h3\u003e\n\u003cul\u003e\n  \u003cli\u003eDataFrame에 신규 컬럼을 추가\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1648571311688_-1913543672",
+      "id": "20220329-162831_1404107479",
+      "dateCreated": "2022-03-29 16:28:31.688",
+      "dateStarted": "2022-04-02 15:56:28.435",
+      "dateFinished": "2022-04-02 15:56:28.442",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%pyspark\n\ndf.withColumn(\u0027withinCountry\u0027, expr(\u0027origin_country_name \u003d\u003d dest_country_name\u0027)).show(5)",
+      "user": "anonymous",
+      "dateUpdated": "2022-04-04 09:11:24.925",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/python"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+-----------------+-------------------+-----+-------------+\n|DEST_COUNTRY_NAME|ORIGIN_COUNTRY_NAME|count|withinCountry|\n+-----------------+-------------------+-----+-------------+\n|    United States|            Romania|   15|        false|\n|    United States|            Croatia|    1|        false|\n|    United States|            Ireland|  344|        false|\n|            Egypt|      United States|   15|        false|\n|    United States|              India|   62|        false|\n+-----------------+-------------------+-----+-------------+\nonly showing top 5 rows\n\n"
+          }
+        ]
+      },
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            "http://b3f9e8c0f3bd:4040/jobs/job?id\u003d170"
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "apps": [],
+      "jobName": "paragraph_1648571379086_-10290107",
+      "id": "20220329-162939_1601765525",
+      "dateCreated": "2022-03-29 16:29:39.086",
+      "dateStarted": "2022-04-04 09:11:24.995",
+      "dateFinished": "2022-04-04 09:11:25.056",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n### withColumnRenamed\n- 컬럼명 변경",
+      "user": "anonymous",
+      "dateUpdated": "2022-04-02 16:18:47.063",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003ewithColumnRenamed\u003c/h3\u003e\n\u003cul\u003e\n  \u003cli\u003e컬럼명 변경\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1648915653157_214809042",
+      "id": "20220402-160733_1733774566",
+      "dateCreated": "2022-04-02 16:07:33.158",
+      "dateStarted": "2022-04-02 16:18:47.063",
+      "dateFinished": "2022-04-02 16:18:47.070",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%pyspark\n\ndf.withColumnRenamed(\u0027dest_country_name\u0027, \u0027dest\u0027)",
+      "user": "anonymous",
+      "dateUpdated": "2022-04-04 09:12:55.490",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/python"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "DataFrame[dest: string, ORIGIN_COUNTRY_NAME: string, count: bigint]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1648915855550_-326916695",
+      "id": "20220402-161055_1847609227",
+      "dateCreated": "2022-04-02 16:10:55.550",
+      "dateStarted": "2022-04-04 09:12:55.560",
+      "dateFinished": "2022-04-04 09:12:55.570",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n## 예약 문자와 키워드\n- 공백이나 하이픈(-) 같은 예약 문자는 컬럼명에 사용할 수 없음\n- 백틱(\u0027)문자를 이용해 이스케이핑 가능",
+      "user": "anonymous",
+      "dateUpdated": "2022-04-02 16:20:51.286",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch2\u003e예약 문자와 키워드\u003c/h2\u003e\n\u003cul\u003e\n  \u003cli\u003e공백이나 하이픈(-) 같은 예약 문자는 컬럼명에 사용할 수 없음\u003c/li\u003e\n  \u003cli\u003e백틱(\u0026rsquo;)문자를 이용해 이스케이핑 가능\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1648916354991_1998718780",
+      "id": "20220402-161914_1878423469",
+      "dateCreated": "2022-04-02 16:19:14.991",
+      "dateStarted": "2022-04-02 16:20:51.286",
+      "dateFinished": "2022-04-02 16:20:51.296",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n### withColumn메서드의 인자로 전달할 땐 이스케이프 문자 필요 없음",
+      "user": "anonymous",
+      "dateUpdated": "2022-04-02 16:21:11.511",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003ewithColumn메서드의 인자로 전달할 땐 이스케이프 문자 필요 없음\u003c/h3\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1648916461952_-1932351323",
+      "id": "20220402-162101_2013012565",
+      "dateCreated": "2022-04-02 16:21:01.952",
+      "dateStarted": "2022-04-02 16:21:11.511",
+      "dateFinished": "2022-04-02 16:21:11.517",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%pyspark\n\ndfWithLongColName \u003d df.withColumn(\n    \u0027This Long Column-Name\u0027,\n    expr(\u0027origin_country_name\u0027)\n)",
+      "user": "anonymous",
+      "dateUpdated": "2022-04-04 09:13:36.386",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/python"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "apps": [],
+      "jobName": "paragraph_1648916471460_204539692",
+      "id": "20220402-162111_1912488290",
+      "dateCreated": "2022-04-02 16:21:11.461",
+      "dateStarted": "2022-04-04 09:13:36.455",
+      "dateFinished": "2022-04-04 09:13:36.469",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%pyspark\n\ndfWithLongColName.columns",
+      "user": "anonymous",
+      "dateUpdated": "2022-04-04 09:13:38.164",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/python"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "[\u0027DEST_COUNTRY_NAME\u0027, \u0027ORIGIN_COUNTRY_NAME\u0027, \u0027count\u0027, \u0027This Long Column-Name\u0027]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1648916499572_-939082392",
+      "id": "20220402-162139_1021023138",
+      "dateCreated": "2022-04-02 16:21:39.572",
+      "dateStarted": "2022-04-04 09:13:38.234",
+      "dateFinished": "2022-04-04 09:13:38.243",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n### 표현식으로 컬럼을 참조할 땐 이스케이프 문자 필요",
+      "user": "anonymous",
+      "dateUpdated": "2022-04-02 16:26:37.502",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003e표현식으로 컬럼을 참조할 땐 이스케이프 문자 필요\u003c/h3\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1648916710865_929560970",
+      "id": "20220402-162510_299171993",
+      "dateCreated": "2022-04-02 16:25:10.865",
+      "dateStarted": "2022-04-02 16:26:37.504",
+      "dateFinished": "2022-04-02 16:26:37.510",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%pyspark\n\ndfWithLongColName.selectExpr(\n    \"`This Long Column-Name`\",\n    \"`This Long Column-Name` as `new col`\"\n).show(2)",
+      "user": "anonymous",
+      "dateUpdated": "2022-04-04 09:15:17.482",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/python"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+---------------------+-------+\n|This Long Column-Name|new col|\n+---------------------+-------+\n|              Romania|Romania|\n|              Croatia|Croatia|\n+---------------------+-------+\nonly showing top 2 rows\n\n"
+          }
+        ]
+      },
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            "http://b3f9e8c0f3bd:4040/jobs/job?id\u003d180"
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "apps": [],
+      "jobName": "paragraph_1648916797451_-47459895",
+      "id": "20220402-162637_1965274350",
+      "dateCreated": "2022-04-02 16:26:37.451",
+      "dateStarted": "2022-04-04 09:15:17.551",
+      "dateFinished": "2022-04-04 09:15:17.604",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n- 표현식 대신 문자열을 사용해서 명시적으로 컬럼을 참조하면 리터럴로 해석되기에 예약 문자가 포함된 컬럼을 참조할 수 있는 것임",
+      "user": "anonymous",
+      "dateUpdated": "2022-04-02 16:31:18.424",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cul\u003e\n  \u003cli\u003e표현식 대신 문자열을 사용해서 명시적으로 컬럼을 참조하면 리터럴로 해석되기에 예약 문자가 포함된 컬럼을 참조할 수 있는 것임\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1648916822469_-1040998867",
+      "id": "20220402-162702_1011768893",
+      "dateCreated": "2022-04-02 16:27:02.469",
+      "dateStarted": "2022-04-02 16:31:18.424",
+      "dateFinished": "2022-04-02 16:31:18.433",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n### 대소문자 구분\n- 기본적으로 스파크는 대소문자를 가리지 않음\n- 다음과 같은 설정으로 스파크에서 대소문자를 구분하게 만들 수 있음",
+      "user": "anonymous",
+      "dateUpdated": "2022-04-02 16:31:35.725",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003e대소문자 구분\u003c/h3\u003e\n\u003cul\u003e\n  \u003cli\u003e기본적으로 스파크는 대소문자를 가리지 않음\u003c/li\u003e\n  \u003cli\u003e다음과 같은 설정으로 스파크에서 대소문자를 구분하게 만들 수 있음\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1648917078378_-1342307179",
+      "id": "20220402-163118_1128916363",
+      "dateCreated": "2022-04-02 16:31:18.378",
+      "dateStarted": "2022-04-02 16:31:35.725",
+      "dateFinished": "2022-04-02 16:31:35.738",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n#### set spark.sql.caseSensitive\u003dtrue",
+      "user": "anonymous",
+      "dateUpdated": "2022-04-02 16:32:01.904",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch4\u003eset spark.sql.caseSensitive\u003dtrue\u003c/h4\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1648917110660_368858500",
+      "id": "20220402-163150_1466355621",
+      "dateCreated": "2022-04-02 16:31:50.660",
+      "dateStarted": "2022-04-02 16:32:01.905",
+      "dateFinished": "2022-04-02 16:32:01.910",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%pyspark\n\nspark.sql(\u0027set spark.sql.caseSensitive\u003dtrue\u0027)",
+      "user": "anonymous",
+      "dateUpdated": "2022-04-04 09:16:51.348",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/python"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "DataFrame[key: string, value: string]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1648917121853_-1737427350",
+      "id": "20220402-163201_234470246",
+      "dateCreated": "2022-04-02 16:32:01.853",
+      "dateStarted": "2022-04-04 09:16:51.421",
+      "dateFinished": "2022-04-04 09:16:51.434",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n#### 확인",
+      "user": "anonymous",
+      "dateUpdated": "2022-04-02 16:32:54.571",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch4\u003e확인\u003c/h4\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1648917145989_-1340775853",
+      "id": "20220402-163225_1055638196",
+      "dateCreated": "2022-04-02 16:32:25.989",
+      "dateStarted": "2022-04-02 16:32:54.572",
+      "dateFinished": "2022-04-02 16:32:54.579",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%pyspark\n\ndf.columns",
+      "user": "anonymous",
+      "dateUpdated": "2022-04-04 09:16:29.013",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/python"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "[\u0027DEST_COUNTRY_NAME\u0027, \u0027ORIGIN_COUNTRY_NAME\u0027, \u0027count\u0027]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1648917174524_-292177901",
+      "id": "20220402-163254_1828608807",
+      "dateCreated": "2022-04-02 16:32:54.524",
+      "dateStarted": "2022-04-04 09:16:29.084",
+      "dateFinished": "2022-04-04 09:16:29.094",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%pyspark\n\ndf.select(\u0027COUNT\u0027).show(1)",
+      "user": "anonymous",
+      "dateUpdated": "2022-04-04 09:16:53.059",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/python"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "ERROR",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "Fail to execute line 1: df.select(\u0027COUNT\u0027).show(1)\nTraceback (most recent call last):\n  File \"/tmp/zeppelin_pyspark-6759103161583663635.py\", line 380, in \u003cmodule\u003e\n    exec(code, _zcUserQueryNameSpace)\n  File \"\u003cstdin\u003e\", line 1, in \u003cmodule\u003e\n  File \"/spark-2.3.2-bin-hadoop2.7/python/lib/pyspark.zip/pyspark/sql/dataframe.py\", line 1202, in select\n    jdf \u003d self._jdf.select(self._jcols(*cols))\n  File \"/spark-2.3.2-bin-hadoop2.7/python/lib/py4j-0.10.7-src.zip/py4j/java_gateway.py\", line 1257, in __call__\n    answer, self.gateway_client, self.target_id, self.name)\n  File \"/spark-2.3.2-bin-hadoop2.7/python/lib/pyspark.zip/pyspark/sql/utils.py\", line 69, in deco\n    raise AnalysisException(s.split(\u0027: \u0027, 1)[1], stackTrace)\nAnalysisException: u\"cannot resolve \u0027`COUNT`\u0027 given input columns: [DEST_COUNTRY_NAME, ORIGIN_COUNTRY_NAME, count];;\\n\u0027Project [\u0027COUNT]\\n+- Relation[DEST_COUNTRY_NAME#1533,ORIGIN_COUNTRY_NAME#1534,count#1535L] json\\n\"\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1648917181793_1296396899",
+      "id": "20220402-163301_173012345",
+      "dateCreated": "2022-04-02 16:33:01.793",
+      "dateStarted": "2022-04-04 09:16:53.126",
+      "dateFinished": "2022-04-04 09:16:53.191",
+      "status": "ERROR",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n- 대소문자 구분함",
+      "user": "anonymous",
+      "dateUpdated": "2022-04-02 16:34:06.978",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cul\u003e\n  \u003cli\u003e대소문자 구분함\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1648917239288_-1153962306",
+      "id": "20220402-163359_1896437090",
+      "dateCreated": "2022-04-02 16:33:59.288",
+      "dateStarted": "2022-04-02 16:34:06.979",
+      "dateFinished": "2022-04-02 16:34:06.983",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%pyspark\n\nspark.sql(\u0027set spark.sql.caseSensitive\u003dfalse\u0027)",
+      "user": "anonymous",
+      "dateUpdated": "2022-04-04 09:16:56.021",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/python"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "DataFrame[key: string, value: string]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1648917192767_1838819559",
+      "id": "20220402-163312_1174543796",
+      "dateCreated": "2022-04-02 16:33:12.767",
+      "dateStarted": "2022-04-04 09:16:56.085",
+      "dateFinished": "2022-04-04 09:16:56.099",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n### 컬럼 제거하기\n- drop 메서드",
+      "user": "anonymous",
+      "dateUpdated": "2022-04-02 16:34:21.319",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003e컬럼 제거하기\u003c/h3\u003e\n\u003cul\u003e\n  \u003cli\u003edrop 메서드\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1648917215290_-1750976825",
+      "id": "20220402-163335_1357375403",
+      "dateCreated": "2022-04-02 16:33:35.290",
+      "dateStarted": "2022-04-02 16:34:21.322",
+      "dateFinished": "2022-04-02 16:34:21.339",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%pyspark\n\ndfWithLongColName.drop(\u0027ORIGIN_COUNTRY_NAME\u0027, \u0027DEST_COUNTRY_NAME\u0027)",
+      "user": "anonymous",
+      "dateUpdated": "2022-04-04 09:22:17.489",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/python"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "DataFrame[count: bigint, This Long Column-Name: string]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1648917261245_-1107662725",
+      "id": "20220402-163421_1398678954",
+      "dateCreated": "2022-04-02 16:34:21.245",
+      "dateStarted": "2022-04-04 09:22:17.557",
+      "dateFinished": "2022-04-04 09:22:17.573",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n### 컬럼의 데이터 타입 변경하기\n- cast 메서드",
+      "user": "anonymous",
+      "dateUpdated": "2022-04-02 16:35:03.481",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003e컬럼의 데이터 타입 변경하기\u003c/h3\u003e\n\u003cul\u003e\n  \u003cli\u003ecast 메서드\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1648917275540_-1328411575",
+      "id": "20220402-163435_79147389",
+      "dateCreated": "2022-04-02 16:34:35.540",
+      "dateStarted": "2022-04-02 16:35:03.481",
+      "dateFinished": "2022-04-02 16:35:03.491",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%pyspark\n\ndf.withColumn(\u0027count2\u0027, col(\u0027count\u0027).cast(StringType()))",
+      "user": "anonymous",
+      "dateUpdated": "2022-04-04 09:22:47.077",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/python"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "DataFrame[DEST_COUNTRY_NAME: string, ORIGIN_COUNTRY_NAME: string, count: bigint, count2: string]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1648917303405_-802617177",
+      "id": "20220402-163503_1508080849",
+      "dateCreated": "2022-04-02 16:35:03.405",
+      "dateStarted": "2022-04-04 09:22:47.149",
+      "dateFinished": "2022-04-04 09:22:47.169",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n### 로우 필터링하기\n- 로우를 필터링하려면 참과 거짓을 판별하는 표현식을 만들어야함\n- 그러면 표현식의 결과가 false인 로우를 걸러낼 수 있음\n- where나 filter메서드로 필터링 가능",
+      "user": "anonymous",
+      "dateUpdated": "2022-04-02 16:43:52.252",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003e로우 필터링하기\u003c/h3\u003e\n\u003cul\u003e\n  \u003cli\u003e로우를 필터링하려면 참과 거짓을 판별하는 표현식을 만들어야함\u003c/li\u003e\n  \u003cli\u003e그러면 표현식의 결과가 false인 로우를 걸러낼 수 있음\u003c/li\u003e\n  \u003cli\u003ewhere나 filter메서드로 필터링 가능\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1648917328606_-680256598",
+      "id": "20220402-163528_1853979316",
+      "dateCreated": "2022-04-02 16:35:28.606",
+      "dateStarted": "2022-04-02 16:43:52.253",
+      "dateFinished": "2022-04-02 16:43:52.266",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%pyspark\n\ndf.filter(col(\u0027count\u0027) \u003c 2).show(2)",
+      "user": "anonymous",
+      "dateUpdated": "2022-04-04 09:29:57.658",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/python"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+-----------------+-------------------+-----+\n|DEST_COUNTRY_NAME|ORIGIN_COUNTRY_NAME|count|\n+-----------------+-------------------+-----+\n|    United States|            Croatia|    1|\n|    United States|          Singapore|    1|\n+-----------------+-------------------+-----+\nonly showing top 2 rows\n\n"
+          }
+        ]
+      },
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            "http://b3f9e8c0f3bd:4040/jobs/job?id\u003d198"
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "apps": [],
+      "jobName": "paragraph_1648917832201_-1004833239",
+      "id": "20220402-164352_613933846",
+      "dateCreated": "2022-04-02 16:43:52.201",
+      "dateStarted": "2022-04-04 09:29:57.726",
+      "dateFinished": "2022-04-04 09:29:57.784",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%pyspark\n\ndf.where(\u0027count \u003c 2\u0027).show(2)\n\n",
+      "user": "anonymous",
+      "dateUpdated": "2022-04-04 09:33:51.162",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/python"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+-----------------+-------------------+-----+\n|DEST_COUNTRY_NAME|ORIGIN_COUNTRY_NAME|count|\n+-----------------+-------------------+-----+\n|    United States|            Croatia|    1|\n|    United States|          Singapore|    1|\n+-----------------+-------------------+-----+\nonly showing top 2 rows\n\n"
+          }
+        ]
+      },
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            "http://b3f9e8c0f3bd:4040/jobs/job?id\u003d192"
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "apps": [],
+      "jobName": "paragraph_1648917842011_954547423",
+      "id": "20220402-164402_1530939900",
+      "dateCreated": "2022-04-02 16:44:02.011",
+      "dateStarted": "2022-04-04 09:28:36.414",
+      "dateFinished": "2022-04-04 09:28:36.516",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n- 스파크는 자동으로 필터의 **순서와 상관없이 동시에 모든 필터링 작업을 수행**하기 때문에 항상 유용한 것은 아님\n- 따라서 여러 개의 AND 필터를 지정하려면 차례대로 필터를 연결하고 판단은 스파크에 맡겨야함",
+      "user": "anonymous",
+      "dateUpdated": "2022-04-02 16:45:54.464",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cul\u003e\n  \u003cli\u003e스파크는 자동으로 필터의 \u003cstrong\u003e순서와 상관없이 동시에 모든 필터링 작업을 수행\u003c/strong\u003e하기 때문에 항상 유용한 것은 아님\u003c/li\u003e\n  \u003cli\u003e따라서 여러 개의 AND 필터를 지정하려면 차례대로 필터를 연결하고 판단은 스파크에 맡겨야함\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1648917874715_1479163577",
+      "id": "20220402-164434_495378174",
+      "dateCreated": "2022-04-02 16:44:34.715",
+      "dateStarted": "2022-04-02 16:45:54.465",
+      "dateFinished": "2022-04-02 16:45:54.476",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n### 고유한 로우 얻기\n- distinct 메서드",
+      "user": "anonymous",
+      "dateUpdated": "2022-04-02 16:47:26.829",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003e고유한 로우 얻기\u003c/h3\u003e\n\u003cul\u003e\n  \u003cli\u003edistinct 메서드\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1648917954408_1304858769",
+      "id": "20220402-164554_937979892",
+      "dateCreated": "2022-04-02 16:45:54.408",
+      "dateStarted": "2022-04-02 16:47:26.830",
+      "dateFinished": "2022-04-02 16:47:26.835",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%pyspark\n\ndf.select(\u0027ORIGIN_COUNTRY_NAME\u0027).distinct().count()",
+      "user": "anonymous",
+      "dateUpdated": "2022-04-04 09:31:51.144",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/python"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "125\n"
+          }
+        ]
+      },
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            "http://b3f9e8c0f3bd:4040/jobs/job?id\u003d204"
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "apps": [],
+      "jobName": "paragraph_1648918046776_1279090751",
+      "id": "20220402-164726_145850021",
+      "dateCreated": "2022-04-02 16:47:26.776",
+      "dateStarted": "2022-04-04 09:31:51.211",
+      "dateFinished": "2022-04-04 09:31:51.664",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n### 무작위 샘플 만들기\n- sample 메서드",
+      "user": "anonymous",
+      "dateUpdated": "2022-04-02 16:48:05.235",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003e무작위 샘플 만들기\u003c/h3\u003e\n\u003cul\u003e\n  \u003cli\u003esample 메서드\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1648918061758_230098423",
+      "id": "20220402-164741_476570349",
+      "dateCreated": "2022-04-02 16:47:41.758",
+      "dateStarted": "2022-04-02 16:48:05.236",
+      "dateFinished": "2022-04-02 16:48:05.240",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%pyspark\n\ndf.sample(withReplacement \u003d False, fraction \u003d 0.5, seed \u003d 1).count()",
+      "user": "anonymous",
+      "dateUpdated": "2022-04-04 09:43:42.818",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/python"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "138\n"
+          }
+        ]
+      },
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            "http://b3f9e8c0f3bd:4040/jobs/job?id\u003d207"
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "apps": [],
+      "jobName": "paragraph_1648918085179_-1155371033",
+      "id": "20220402-164805_1005867742",
+      "dateCreated": "2022-04-02 16:48:05.179",
+      "dateStarted": "2022-04-04 09:43:42.888",
+      "dateFinished": "2022-04-04 09:43:42.944",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n- 복원 추출 여부: False\n- 표본 데이터 추출 비율:0.5",
+      "user": "anonymous",
+      "dateUpdated": "2022-04-02 16:49:51.245",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cul\u003e\n  \u003cli\u003e복원 추출 여부: False\u003c/li\u003e\n  \u003cli\u003e표본 데이터 추출 비율:0.5\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1648918094150_1609153473",
+      "id": "20220402-164814_947602627",
+      "dateCreated": "2022-04-02 16:48:14.150",
+      "dateStarted": "2022-04-02 16:49:51.246",
+      "dateFinished": "2022-04-02 16:49:51.255",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n### 임의 분할하기\n- randomSplit 메서드\n- 학습 / 검증 / 테스트 셋을 만들 때 주로 사용",
+      "user": "anonymous",
+      "dateUpdated": "2022-04-02 16:50:07.579",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003e임의 분할하기\u003c/h3\u003e\n\u003cul\u003e\n  \u003cli\u003erandomSplit 메서드\u003c/li\u003e\n  \u003cli\u003e학습 / 검증 / 테스트 셋을 만들 때 주로 사용\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1648918191189_122577691",
+      "id": "20220402-164951_1288687740",
+      "dateCreated": "2022-04-02 16:49:51.189",
+      "dateStarted": "2022-04-02 16:50:07.579",
+      "dateFinished": "2022-04-02 16:50:07.586",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%pyspark\n\ntmp_df \u003d df.randomSplit([0.25, 0.75], seed \u003d 1)",
+      "user": "anonymous",
+      "dateUpdated": "2022-04-02 16:50:44.837",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/python"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "apps": [],
+      "jobName": "paragraph_1648918207522_-413182624",
+      "id": "20220402-165007_1864221096",
+      "dateCreated": "2022-04-02 16:50:07.522",
+      "dateStarted": "2022-04-02 16:50:44.895",
+      "dateFinished": "2022-04-02 16:50:44.909",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%pyspark\n\ntmp_df[0].count()",
+      "user": "anonymous",
+      "dateUpdated": "2022-04-02 16:50:54.969",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/python"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "83\n"
+          }
+        ]
+      },
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            "http://b3f9e8c0f3bd:4040/jobs/job?id\u003d43"
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "apps": [],
+      "jobName": "paragraph_1648918232585_-1048169706",
+      "id": "20220402-165032_1421233020",
+      "dateCreated": "2022-04-02 16:50:32.585",
+      "dateStarted": "2022-04-02 16:50:55.030",
+      "dateFinished": "2022-04-02 16:50:55.312",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%pyspark\n\ntmp_df[1].count()",
+      "user": "anonymous",
+      "dateUpdated": "2022-04-02 16:51:06.611",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/python"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "173\n"
+          }
+        ]
+      },
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            "http://b3f9e8c0f3bd:4040/jobs/job?id\u003d44"
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "apps": [],
+      "jobName": "paragraph_1648918254969_1425645555",
+      "id": "20220402-165054_1078080814",
+      "dateCreated": "2022-04-02 16:50:54.969",
+      "dateStarted": "2022-04-02 16:51:06.672",
+      "dateFinished": "2022-04-02 16:51:06.766",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n### 로우 합치기와 추가하기\n- union 메서드\n- 통합하려는 두 DataFrame은 반드시 동일한 스키마와 컬럼 수를 가져야함\n- 또한, union 메서드는 컬럼 위치를 기반으로 동작함",
+      "user": "anonymous",
+      "dateUpdated": "2022-04-02 16:51:25.636",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003e로우 합치기와 추가하기\u003c/h3\u003e\n\u003cul\u003e\n  \u003cli\u003eunion 메서드\u003c/li\u003e\n  \u003cli\u003e통합하려는 두 DataFrame은 반드시 동일한 스키마와 컬럼 수를 가져야함\u003c/li\u003e\n  \u003cli\u003e또한, union 메서드는 컬럼 위치를 기반으로 동작함\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1648918266611_-42945667",
+      "id": "20220402-165106_2096957671",
+      "dateCreated": "2022-04-02 16:51:06.611",
+      "dateStarted": "2022-04-02 16:51:25.636",
+      "dateFinished": "2022-04-02 16:51:25.645",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%pyspark\n\nschema\u003d df.schema\nnewRows\u003d [\n  Row(\u0027new_country\u0027, \u0027other_country\u0027, 5),\n  Row(\u0027new_country_2\u0027, \u0027otheR_country_3\u0027, 1)\n]\n\nparallelizedRows \u003d spark.sparkContext.parallelize(newRows)\nnewDF \u003d spark.createDataFrame(parallelizedRows, schema)",
+      "user": "anonymous",
+      "dateUpdated": "2022-04-02 16:54:24.077",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/python"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "apps": [],
+      "jobName": "paragraph_1648918285575_610733471",
+      "id": "20220402-165125_777809752",
+      "dateCreated": "2022-04-02 16:51:25.575",
+      "dateStarted": "2022-04-02 16:54:24.134",
+      "dateFinished": "2022-04-02 16:54:24.171",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%pyspark\n\ndf.union(newDF)\\\n    .where(\u0027count\u003d1\u0027)\\\n    .where(col(\u0027ORIGIN_COUNTRY_NAME\u0027) !\u003d \u0027United States\u0027).show()",
+      "user": "anonymous",
+      "dateUpdated": "2022-04-02 16:56:44.548",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/python"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+-----------------+-------------------+-----+\n|DEST_COUNTRY_NAME|ORIGIN_COUNTRY_NAME|count|\n+-----------------+-------------------+-----+\n|    United States|            Croatia|    1|\n|    United States|          Singapore|    1|\n|    United States|          Gibraltar|    1|\n|    United States|             Cyprus|    1|\n|    United States|            Estonia|    1|\n|    United States|          Lithuania|    1|\n|    United States|           Bulgaria|    1|\n|    United States|            Georgia|    1|\n|    United States|            Bahrain|    1|\n|    United States|   Papua New Guinea|    1|\n|    United States|         Montenegro|    1|\n|    United States|            Namibia|    1|\n|    new_country_2|    otheR_country_3|    1|\n+-----------------+-------------------+-----+\n\n"
+          }
+        ]
+      },
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            "http://b3f9e8c0f3bd:4040/jobs/job?id\u003d56",
+            "http://b3f9e8c0f3bd:4040/jobs/job?id\u003d57",
+            "http://b3f9e8c0f3bd:4040/jobs/job?id\u003d58",
+            "http://b3f9e8c0f3bd:4040/jobs/job?id\u003d59"
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "apps": [],
+      "jobName": "paragraph_1648918464077_975721097",
+      "id": "20220402-165424_261904068",
+      "dateCreated": "2022-04-02 16:54:24.077",
+      "dateStarted": "2022-04-02 16:56:44.606",
+      "dateFinished": "2022-04-02 16:56:44.821",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n### 로우 정렬하기\n- sort나 orderBy메서드",
+      "user": "anonymous",
+      "dateUpdated": "2022-04-02 16:57:23.038",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003e로우 정렬하기\u003c/h3\u003e\n\u003cul\u003e\n  \u003cli\u003esort나 orderBy메서드\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1648918516643_201176816",
+      "id": "20220402-165516_1374837102",
+      "dateCreated": "2022-04-02 16:55:16.643",
+      "dateStarted": "2022-04-02 16:57:23.039",
+      "dateFinished": "2022-04-02 16:57:23.043",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%pyspark\n\ndf.sort(\u0027count\u0027).show(3)",
+      "user": "anonymous",
+      "dateUpdated": "2022-04-02 16:57:32.304",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/python"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+-----------------+-------------------+-----+\n|DEST_COUNTRY_NAME|ORIGIN_COUNTRY_NAME|count|\n+-----------------+-------------------+-----+\n|          Moldova|      United States|    1|\n|    United States|          Singapore|    1|\n|    United States|            Croatia|    1|\n+-----------------+-------------------+-----+\nonly showing top 3 rows\n\n"
+          }
+        ]
+      },
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            "http://b3f9e8c0f3bd:4040/jobs/job?id\u003d60"
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "apps": [],
+      "jobName": "paragraph_1648918642964_-1730687691",
+      "id": "20220402-165722_1017694678",
+      "dateCreated": "2022-04-02 16:57:22.964",
+      "dateStarted": "2022-04-02 16:57:32.366",
+      "dateFinished": "2022-04-02 16:57:32.520",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%pyspark\n\nfrom pyspark.sql.functions import desc, asc\n\ndf.orderBy(desc(\u0027count\u0027), \u0027DEST_COUNTRY_NAME\u0027).show(3)",
+      "user": "anonymous",
+      "dateUpdated": "2022-04-04 09:47:19.031",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/python"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+-----------------+-------------------+------+\n|DEST_COUNTRY_NAME|ORIGIN_COUNTRY_NAME| count|\n+-----------------+-------------------+------+\n|    United States|      United States|370002|\n|    United States|             Canada|  8483|\n|           Canada|      United States|  8399|\n+-----------------+-------------------+------+\nonly showing top 3 rows\n\n"
+          }
+        ]
+      },
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            "http://b3f9e8c0f3bd:4040/jobs/job?id\u003d209"
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "apps": [],
+      "jobName": "paragraph_1648918652305_1239917227",
+      "id": "20220402-165732_1506685244",
+      "dateCreated": "2022-04-02 16:57:32.305",
+      "dateStarted": "2022-04-04 09:47:19.100",
+      "dateFinished": "2022-04-04 09:47:19.173",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n### 로우 수 제한하기\n- limit 메서드",
+      "user": "anonymous",
+      "dateUpdated": "2022-04-02 17:00:19.335",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003e로우 수 제한하기\u003c/h3\u003e\n\u003cul\u003e\n  \u003cli\u003elimit 메서드\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1648918664054_1020110951",
+      "id": "20220402-165744_1008193032",
+      "dateCreated": "2022-04-02 16:57:44.054",
+      "dateStarted": "2022-04-02 17:00:19.335",
+      "dateFinished": "2022-04-02 17:00:19.340",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%pyspark\n\ndf.limit(5).show()",
+      "user": "anonymous",
+      "dateUpdated": "2022-04-02 17:00:28.309",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/python"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+-----------------+-------------------+-----+\n|DEST_COUNTRY_NAME|ORIGIN_COUNTRY_NAME|count|\n+-----------------+-------------------+-----+\n|    United States|            Romania|   15|\n|    United States|            Croatia|    1|\n|    United States|            Ireland|  344|\n|            Egypt|      United States|   15|\n|    United States|              India|   62|\n+-----------------+-------------------+-----+\n\n"
+          }
+        ]
+      },
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            "http://b3f9e8c0f3bd:4040/jobs/job?id\u003d65"
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "apps": [],
+      "jobName": "paragraph_1648918819271_-1096070713",
+      "id": "20220402-170019_890394850",
+      "dateCreated": "2022-04-02 17:00:19.271",
+      "dateStarted": "2022-04-02 17:00:28.376",
+      "dateFinished": "2022-04-02 17:00:28.478",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n### repartition과 coalesce\n- 최적화 기법 중, 자주 필터링하는 컬럼을 기준으로 데이터를 분할하는 방법이 있다.\n    - 이를 통해 파티셔닝 스키마와 파티션 수 등 클러스터 전반의 물리적 데이터 구성을 제어할 수 있다.\n- repartition 메서드로 파티션 재분배 가능\n    - 전체 데이터를 셔플함\n    - 향후에 파티션 수가 현재 파티션 수보다 많을 때나\n    - 컬럼을 기준으로 파티션을 만드는 경우에만 사용\n- coalesce 메서드로 전체 데이터를 셔플하지 않고 파티션 병합 가능",
+      "user": "anonymous",
+      "dateUpdated": "2022-04-04 09:47:42.956",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003erepartition과 coalesce\u003c/h3\u003e\n\u003cul\u003e\n  \u003cli\u003e최적화 기법 중, 자주 필터링하는 컬럼을 기준으로 데이터를 분할하는 방법이 있다.\n    \u003cul\u003e\n      \u003cli\u003e이를 통해 파티셔닝 스키마와 파티션 수 등 클러스터 전반의 물리적 데이터 구성을 제어할 수 있다.\u003c/li\u003e\n    \u003c/ul\u003e\n  \u003c/li\u003e\n  \u003cli\u003erepartition 메서드로 파티션 재분배 가능\n    \u003cul\u003e\n      \u003cli\u003e전체 데이터를 셔플함\u003c/li\u003e\n      \u003cli\u003e향후에 파티션 수가 현재 파티션 수보다 많을 때나\u003c/li\u003e\n      \u003cli\u003e컬럼을 기준으로 파티션을 만드는 경우에만 사용\u003c/li\u003e\n    \u003c/ul\u003e\n  \u003c/li\u003e\n  \u003cli\u003ecoalesce 메서드로 전체 데이터를 셔플하지 않고 파티션 병합 가능\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1648918828309_-427939119",
+      "id": "20220402-170028_2112487422",
+      "dateCreated": "2022-04-02 17:00:28.309",
+      "dateStarted": "2022-04-04 09:47:42.957",
+      "dateFinished": "2022-04-04 09:47:42.967",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%pyspark\n\ndf.rdd.getNumPartitions()",
+      "user": "anonymous",
+      "dateUpdated": "2022-04-04 09:50:32.959",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/python"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "5\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1648918871166_-1677716864",
+      "id": "20220402-170111_1138624743",
+      "dateCreated": "2022-04-02 17:01:11.166",
+      "dateStarted": "2022-04-04 09:50:29.356",
+      "dateFinished": "2022-04-04 09:50:29.382",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%pyspark\n\ndf.repartition(5)",
+      "user": "anonymous",
+      "dateUpdated": "2022-04-04 09:52:29.564",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/python"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "DataFrame[DEST_COUNTRY_NAME: string, ORIGIN_COUNTRY_NAME: string, count: bigint]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1648918882067_-1916156802",
+      "id": "20220402-170122_507576509",
+      "dateCreated": "2022-04-02 17:01:22.067",
+      "dateStarted": "2022-04-04 09:52:29.632",
+      "dateFinished": "2022-04-04 09:52:29.644",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%pyspark\n\ndf.repartition(col(\u0027DEST_COUNTRY_NAME\u0027))",
+      "user": "anonymous",
+      "dateUpdated": "2022-04-04 09:52:31.713",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/python"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "DataFrame[DEST_COUNTRY_NAME: string, ORIGIN_COUNTRY_NAME: string, count: bigint]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1648918910365_1566574206",
+      "id": "20220402-170150_642758431",
+      "dateCreated": "2022-04-02 17:01:50.365",
+      "dateStarted": "2022-04-04 09:52:31.778",
+      "dateFinished": "2022-04-04 09:52:31.801",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%pyspark\n\ndf.repartition(5, col(\u0027DEST_COUNTRY_NAME\u0027)).coalesce(2)",
+      "user": "anonymous",
+      "dateUpdated": "2022-04-04 09:53:06.054",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/python"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "DataFrame[DEST_COUNTRY_NAME: string, ORIGIN_COUNTRY_NAME: string, count: bigint]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1648918950339_-1432307471",
+      "id": "20220402-170230_910819384",
+      "dateCreated": "2022-04-02 17:02:30.339",
+      "dateStarted": "2022-04-04 09:53:06.125",
+      "dateFinished": "2022-04-04 09:53:06.149",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n### 드라이버로 로우 데이터 수집하기\n- 스파크는 드라이버에서 클러스터 상태 정보를 유지한다.\n- collect 메서드: 데이터프레임의 모든 데이터 수집\n    - 대규모 데이터셋에 수행하면 드라이버가 비정상적으로 종료될 수 있음\n- take 메서드: 상위 N개의 row 반환\n- show 메서드: 여러 row를 보기 좋게 출력",
+      "user": "anonymous",
+      "dateUpdated": "2022-04-02 17:05:10.983",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003e드라이버로 로우 데이터 수집하기\u003c/h3\u003e\n\u003cul\u003e\n  \u003cli\u003e스파크는 드라이버에서 클러스터 상태 정보를 유지한다.\u003c/li\u003e\n  \u003cli\u003ecollect 메서드: 데이터프레임의 모든 데이터 수집\n    \u003cul\u003e\n      \u003cli\u003e대규모 데이터셋에 수행하면 드라이버가 비정상적으로 종료될 수 있음\u003c/li\u003e\n    \u003c/ul\u003e\n  \u003c/li\u003e\n  \u003cli\u003etake 메서드: 상위 N개의 row 반환\u003c/li\u003e\n  \u003cli\u003eshow 메서드: 여러 row를 보기 좋게 출력\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1648919014640_-10654311",
+      "id": "20220402-170334_2135037446",
+      "dateCreated": "2022-04-02 17:03:34.640",
+      "dateStarted": "2022-04-02 17:05:10.984",
+      "dateFinished": "2022-04-02 17:05:10.992",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%pyspark\n\ncollectDF \u003d df.limit(10)",
+      "user": "anonymous",
+      "dateUpdated": "2022-04-04 09:54:14.149",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/python"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "apps": [],
+      "jobName": "paragraph_1648919110916_1467140429",
+      "id": "20220402-170510_1888067631",
+      "dateCreated": "2022-04-02 17:05:10.916",
+      "dateStarted": "2022-04-04 09:54:14.215",
+      "dateFinished": "2022-04-04 09:54:14.225",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%pyspark\n\ncollectDF.collect()",
+      "user": "anonymous",
+      "dateUpdated": "2022-04-04 09:54:26.438",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/python"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "[Row(DEST_COUNTRY_NAME\u003du\u0027United States\u0027, ORIGIN_COUNTRY_NAME\u003du\u0027Romania\u0027, count\u003d15), Row(DEST_COUNTRY_NAME\u003du\u0027United States\u0027, ORIGIN_COUNTRY_NAME\u003du\u0027Croatia\u0027, count\u003d1), Row(DEST_COUNTRY_NAME\u003du\u0027United States\u0027, ORIGIN_COUNTRY_NAME\u003du\u0027Ireland\u0027, count\u003d344), Row(DEST_COUNTRY_NAME\u003du\u0027Egypt\u0027, ORIGIN_COUNTRY_NAME\u003du\u0027United States\u0027, count\u003d15), Row(DEST_COUNTRY_NAME\u003du\u0027United States\u0027, ORIGIN_COUNTRY_NAME\u003du\u0027India\u0027, count\u003d62), Row(DEST_COUNTRY_NAME\u003du\u0027United States\u0027, ORIGIN_COUNTRY_NAME\u003du\u0027Singapore\u0027, count\u003d1), Row(DEST_COUNTRY_NAME\u003du\u0027United States\u0027, ORIGIN_COUNTRY_NAME\u003du\u0027Grenada\u0027, count\u003d62), Row(DEST_COUNTRY_NAME\u003du\u0027Costa Rica\u0027, ORIGIN_COUNTRY_NAME\u003du\u0027United States\u0027, count\u003d588), Row(DEST_COUNTRY_NAME\u003du\u0027Senegal\u0027, ORIGIN_COUNTRY_NAME\u003du\u0027United States\u0027, count\u003d40), Row(DEST_COUNTRY_NAME\u003du\u0027Moldova\u0027, ORIGIN_COUNTRY_NAME\u003du\u0027United States\u0027, count\u003d1)]\n"
+          }
+        ]
+      },
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            "http://b3f9e8c0f3bd:4040/jobs/job?id\u003d211"
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "apps": [],
+      "jobName": "paragraph_1648919209770_-945075575",
+      "id": "20220402-170649_1656331667",
+      "dateCreated": "2022-04-02 17:06:49.770",
+      "dateStarted": "2022-04-04 09:54:26.507",
+      "dateFinished": "2022-04-04 09:54:26.546",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%pyspark\n\ncollectDF.take(5)",
+      "user": "anonymous",
+      "dateUpdated": "2022-04-04 09:54:33.636",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/python"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "[Row(DEST_COUNTRY_NAME\u003du\u0027United States\u0027, ORIGIN_COUNTRY_NAME\u003du\u0027Romania\u0027, count\u003d15), Row(DEST_COUNTRY_NAME\u003du\u0027United States\u0027, ORIGIN_COUNTRY_NAME\u003du\u0027Croatia\u0027, count\u003d1), Row(DEST_COUNTRY_NAME\u003du\u0027United States\u0027, ORIGIN_COUNTRY_NAME\u003du\u0027Ireland\u0027, count\u003d344), Row(DEST_COUNTRY_NAME\u003du\u0027Egypt\u0027, ORIGIN_COUNTRY_NAME\u003du\u0027United States\u0027, count\u003d15), Row(DEST_COUNTRY_NAME\u003du\u0027United States\u0027, ORIGIN_COUNTRY_NAME\u003du\u0027India\u0027, count\u003d62)]\n"
+          }
+        ]
+      },
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            "http://b3f9e8c0f3bd:4040/jobs/job?id\u003d212"
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "apps": [],
+      "jobName": "paragraph_1648919302553_1674366590",
+      "id": "20220402-170822_1484777967",
+      "dateCreated": "2022-04-02 17:08:22.553",
+      "dateStarted": "2022-04-04 09:54:33.707",
+      "dateFinished": "2022-04-04 09:54:33.750",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%pyspark\n\ncollectDF.show(5)",
+      "user": "anonymous",
+      "dateUpdated": "2022-04-04 09:54:40.448",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/python"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+-----------------+-------------------+-----+\n|DEST_COUNTRY_NAME|ORIGIN_COUNTRY_NAME|count|\n+-----------------+-------------------+-----+\n|    United States|            Romania|   15|\n|    United States|            Croatia|    1|\n|    United States|            Ireland|  344|\n|            Egypt|      United States|   15|\n|    United States|              India|   62|\n+-----------------+-------------------+-----+\nonly showing top 5 rows\n\n"
+          }
+        ]
+      },
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            "http://b3f9e8c0f3bd:4040/jobs/job?id\u003d213"
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "apps": [],
+      "jobName": "paragraph_1648919315620_1736163874",
+      "id": "20220402-170835_1019338042",
+      "dateCreated": "2022-04-02 17:08:35.620",
+      "dateStarted": "2022-04-04 09:54:40.517",
+      "dateFinished": "2022-04-04 09:54:40.577",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%pyspark\n\ncollectDF.toLocalIterator()",
+      "user": "anonymous",
+      "dateUpdated": "2022-04-04 09:56:05.516",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/python"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u003citertools.chain object at 0x7fdff8734b90\u003e\n"
+          }
+        ]
+      },
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            "http://b3f9e8c0f3bd:4040/jobs/job?id\u003d215"
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "apps": [],
+      "jobName": "paragraph_1648919327667_-1118913393",
+      "id": "20220402-170847_1290991354",
+      "dateCreated": "2022-04-02 17:08:47.667",
+      "dateStarted": "2022-04-04 09:56:05.587",
+      "dateFinished": "2022-04-04 09:56:05.603",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n- toLocalIterator 메서드로 데이터셋의 파티션을 차례로 반복 처리 가능\n    - iterator로 모든 파티션의 데이터를 드라이버에 전달\n    - 병렬 연산 X -\u003e 매우 큰 처리 비용 발생",
+      "user": "anonymous",
+      "dateUpdated": "2022-04-02 17:10:04.741",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cul\u003e\n  \u003cli\u003etoLocalIterator 메서드로 데이터셋의 파티션을 차례로 반복 처리 가능\n    \u003cul\u003e\n      \u003cli\u003eiterator로 모든 파티션의 데이터를 드라이버에 전달\u003c/li\u003e\n      \u003cli\u003e병렬 연산 X -\u0026gt; 매우 큰 처리 비용 발생\u003c/li\u003e\n    \u003c/ul\u003e\n  \u003c/li\u003e\n\u003c/ul\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1648919377833_-456838529",
+      "id": "20220402-170937_1789976252",
+      "dateCreated": "2022-04-02 17:09:37.833",
+      "dateStarted": "2022-04-02 17:10:04.742",
+      "dateFinished": "2022-04-02 17:10:04.750",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    }
+  ],
+  "name": "Chapter5",
+  "id": "2GYBJGQHH",
+  "noteParams": {},
+  "noteForms": {},
+  "angularObjects": {
+    "md:shared_process": [],
+    "spark:shared_process": []
+  },
+  "config": {
+    "isZeppelinNotebookCronEnable": false
+  },
+  "info": {}
+}
